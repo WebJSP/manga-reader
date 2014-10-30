@@ -44,7 +44,7 @@ function loadPage(page, pageElement) {
 
 	// Load the page
 
-	img.attr('src', mangaReader.pages[page-1]);
+	img.attr('src', mangaReader.activeVolume.files[page-1]);
 
 }
 
@@ -232,4 +232,13 @@ function exitFullscreen() {
         document.webkitExitFullscreen();
     }
     fullscreenEnabled = false;
+}
+
+function getVolume(volume) {
+    for(var index=0; index<mangaReader.data.length; index++) {
+        if (mangaReader.data[index].info.volume == volume) {
+            return mangaReader.data[index];
+        }
+    }
+    return undefined;
 }

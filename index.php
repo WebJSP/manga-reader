@@ -3,9 +3,9 @@
     $userAgent = new \UserAgent();
     $browser = $userAgent->getName();
     $version = $userAgent->getSimpleVersion();
-	$folder = $_GET["manga"];
-	$volume = $_GET["vol"];
-	$page = $_GET["page"];
+	$folder = filter_input(INPUT_GET, "manga");
+	$volume = filter_input(INPUT_GET, "vol");
+	$page = filter_input(INPUT_GET, "page");
 	if (!isset($page)) {
 		$page = 1;
 	}
@@ -28,13 +28,7 @@
 <body>
     <div id="canvas">
         <div id="manga-menu" href="#sidr"></div>
-        <div id="sidr">
-            <ul>
-                <li><a href="#">Volume 1</a></li>
-                <li class="active"><a href="#">Volume 2</a></li>
-                <li><a href="#">Volume 3</a></li>
-            </ul>
-        </div>
+        <div id="sidr"><ul></ul></div>
         <div class="zoom-icon zoom-icon-in"></div>
         <div class="fullscreen-icon"></div>
         <div class="manga-viewport">
@@ -50,8 +44,10 @@
     </div>
     <script type="text/javascript">
     	var mangaReader = {
-    		pages: [],
-    		page: <? echo $page; ?>
+    		data: [],
+    		page: <?php echo $page; ?>,
+            volume: <?php echo $volume; ?>,
+            activeVolume: undefined
     	};
 
         var fullscreenEnabled = false;
@@ -60,7 +56,6 @@
             //document.webkitFullscreenEnabled;
 
         function loadApp() {
-            $('#manga-menu').sidr({displace: false});
             $('#canvas').fadeIn(1000);
             var flipbook = $('.manga');
 
@@ -70,11 +65,17 @@
                 return;
             }
 
-            $.post('php/files.php', {
-            	path: '<? echo $folder.'/volume'.$volume; ?>'
+            $.post('php/folders.php', {
+            	folder: '<?php echo $folder; ?>'
             }, function(data) {
-            	mangaReader.pages = data;
+            	mangaReader.data = data;
+                // build the menu
+                for(var index=0; index<mangaReader.data.length; index++) {
+                    $('<li><a href="#">'+mangaReader.data[index].info.name+'</a></li>').appendTo('#sidr>ul');
+                }
+                $('#manga-menu').sidr({displace: false});
 
+                mangaReader.activeVolume = getVolume(mangaReader.volume);
 	            // Create the flipbook
 	            flipbook.turn({
 	                // manga width
@@ -92,7 +93,7 @@
 	                // Elevation from the edge of the flipbook when turning a page
 	                elevation: 50,
 	                // The number of pages
-	                pages: mangaReader.pages.length,
+	                pages: mangaReader.activeVolume.files.length,
 	                // The pages direction
 	                direction: 'rtl',
 	                // Events
