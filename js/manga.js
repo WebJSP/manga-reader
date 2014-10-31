@@ -13,57 +13,62 @@ function addPage(page, book) {
 		element.html('<div class="gradient"></div><div class="loader"></div>');
 
 		// Load the page
-		loadPage(page, element);
+                //if (mangaReader.activeVolume.files[page-1].indexOf("svg")===-1)
+                loadPageAsImage(page, element);
+                //else
+                //    loadPageAsObject(page, element);
 	}
 
 }
 
-function loadPage(page, pageElement) {
+function loadPageAsImage(page, pageElement) {
+    // Create an image element
+    var img = $('<img />');
 
-	// Create an image element
+    img.mousedown(function(e) {
+        e.preventDefault();
+    });
 
-	var img = $('<img />');
+    img.load(function() {
+        // Set the size
+        $(this).css({width: '100%', height: '100%'});
+        // Add the image to the page after loaded
+        $(this).appendTo(pageElement);
+        // Remove the loader indicator
+        pageElement.find('.loader').remove();
+    });
 
-	img.mousedown(function(e) {
-		e.preventDefault();
-	});
-
-	img.load(function() {
-		
-		// Set the size
-		$(this).css({width: '100%', height: '100%'});
-
-		// Add the image to the page after loaded
-
-		$(this).appendTo(pageElement);
-
-		// Remove the loader indicator
-		
-		pageElement.find('.loader').remove();
-	});
-
-	// Load the page
-
-	img.attr('src', mangaReader.activeVolume.files[page-1]);
+    // Load the page
+    img.attr('src', mangaReader.activeVolume.files[page-1]);
 
 }
 
+//function loadPageAsObject(page, pageElement) {
+//    // Create a canvas element
+//    $('<canvas id="p'+page+'" width="'+pageElement.width()+'" height="'+pageElement.height()+'"></canvas>').appendTo(pageElement);
+//    var url = mangaReader.activeVolume.files[page-1];
+//    fabric.loadSVGFromURL(url, function(objects, options){
+//        var fab = new fabric.Canvas('p'+page), 
+//            obj = fabric.util.groupSVGElements(objects, options);
+//        fab.add(obj).renderAll();
+//        // Remove the loader indicator
+//        pageElement.find('.loader').remove();
+//    });
+//}
+
 // Zoom in / Zoom out
-
 function zoomTo(event) {
-
-		setTimeout(function() {
-			if ($('.manga-viewport').data().regionClicked) {
-				$('.manga-viewport').data().regionClicked = false;
-			} else {
-				if ($('.manga-viewport').zoom('value')==1) {
-					$('.manga-viewport').zoom('zoomIn', event);
-				} else {
-					$('.manga-viewport').zoom('zoomOut');
-				}
-			}
-		}, 1);
-
+    setTimeout(function() {
+        if ($('.manga-viewport').data().regionClicked) {
+            $('.manga-viewport').data().regionClicked = false;
+        } else {
+            if ($('.manga-viewport').zoom('value')==1) {
+                $('.manga-viewport').zoom('zoomIn', event);
+            } else {
+                $('.manga-viewport').zoom('zoomOut');
+            }
+        }
+    }, 1);
 }
 
 // http://code.google.com/p/chromium/issues/detail?id=128488
