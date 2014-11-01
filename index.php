@@ -140,7 +140,7 @@
 	                    },
 
 	                    resize: function(event, scale, page, pageElement) {
-	                        loadPage(page, pageElement);
+	                        //loadPage(page, pageElement);
 	                    },
 
 	                    zoomIn: function () {

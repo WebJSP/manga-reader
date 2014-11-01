@@ -13,12 +13,16 @@ function addPage(page, book) {
 		element.html('<div class="gradient"></div><div class="loader"></div>');
 
 		// Load the page
-                //if (mangaReader.activeVolume.files[page-1].indexOf("svg")===-1)
-                loadPageAsImage(page, element);
-                //else
-                //    loadPageAsObject(page, element);
+        loadPage(page, element);
 	}
 
+}
+
+function loadPage(page, pageElement) {
+    if (mangaReader.activeVolume.files[page-1].indexOf("svg")===-1)
+        loadPageAsImage(page, pageElement);
+    else
+        loadPageAsSvg(page, pageElement);
 }
 
 function loadPageAsImage(page, pageElement) {
@@ -40,21 +44,28 @@ function loadPageAsImage(page, pageElement) {
 
     // Load the page
     img.attr('src', mangaReader.activeVolume.files[page-1]);
-
 }
 
-//function loadPageAsObject(page, pageElement) {
-//    // Create a canvas element
-//    $('<canvas id="p'+page+'" width="'+pageElement.width()+'" height="'+pageElement.height()+'"></canvas>').appendTo(pageElement);
-//    var url = mangaReader.activeVolume.files[page-1];
-//    fabric.loadSVGFromURL(url, function(objects, options){
-//        var fab = new fabric.Canvas('p'+page), 
-//            obj = fabric.util.groupSVGElements(objects, options);
-//        fab.add(obj).renderAll();
-//        // Remove the loader indicator
-//        pageElement.find('.loader').remove();
-//    });
-//}
+function loadPageAsSvg(page, pageElement) {
+    var url = mangaReader.activeVolume.files[page-1],
+        start = url.lastIndexOf("/")+1,
+        len = url.lastIndexOf(".")-start,
+        id = url.substr(start, len);
+    pageElement.load(url+' #'+id,
+        function(){
+            var svg = $(this).children(),
+                imageHRef = svg.children('image').get(0).href.baseVal;
+            svg.css({width: '100%', height: '100%'});
+            if (imageHRef.indexOf('data:')===-1) {
+                svg.children('image').get(0).href.baseVal =
+                    mangaReader.activeVolume.path+'/'+imageHRef
+            }
+            svg.mousedown(function(e) {
+                e.preventDefault();
+            });
+        }
+    );
+}
 
 // Zoom in / Zoom out
 function zoomTo(event) {
