@@ -53,16 +53,18 @@ function loadPageAsSvg(page, pageElement) {
         id = url.substr(start, len);
     pageElement.load(url+' #'+id,
         function(){
-            var svg = $(this).children(),
-                imageHRef = svg.children('image').get(0).href.baseVal;
-            svg.css({width: '100%', height: '100%'});
-            if (imageHRef.indexOf('data:')===-1) {
-                svg.children('image').get(0).href.baseVal =
-                    mangaReader.activeVolume.path+'/'+imageHRef
-            }
+            var svg = $(this).children();
             svg.mousedown(function(e) {
                 e.preventDefault();
             });
+            svg.css({width: '100%', height: '100%'});
+            if (svg.children('image').length>0) {
+                var imageHRef = svg.children('image').get(0).href.baseVal;
+                if (imageHRef.indexOf('data:')===-1) {
+                    svg.children('image').get(0).href.baseVal =
+                        mangaReader.activeVolume.path+'/'+imageHRef
+                }
+            }
         }
     );
 }
