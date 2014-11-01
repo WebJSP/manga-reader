@@ -289,7 +289,7 @@
             test : Modernizr.csstransforms,
             yep: ['lib/turn.js'],
             nope: ['lib/turn.html4.min.js'],
-            both: ['lib/zoom.min.js', /*'extras/fabric.min.js',*/ 'js/manga.js', 'css/manga.css'],
+            both: ['lib/zoom.min.js', /*'extras/fabric.min.js',*/ 'js/manga-1.0.0.js', 'css/manga-1.0.0.css'],
             complete: loadApp
         });
 
