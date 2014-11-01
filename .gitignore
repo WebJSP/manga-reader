@@ -6,6 +6,5 @@ app/[Cc]onfig/core.php
 app/[Cc]onfig/database.php
 !empty
 nbproject/*
-watashi/*
 example/*
 svg/[0123456789]*.svg
