@@ -1,8 +1,9 @@
 <?php
-    require 'phplib/userAgent.php';
-    $userAgent = new \UserAgent();
-    $browser = $userAgent->getName();
-    $version = $userAgent->getSimpleVersion();
+    require 'phplib/phpUserAgent.php';
+    require 'phplib/phpUserAgentStringParser.php';
+    $userAgent = new \phpUserAgent();
+    $browser = $userAgent->getBrowserName();
+    $version = $userAgent->getBrowserVersion();
 	$folder = filter_input(INPUT_GET, "manga");
 	$volume = filter_input(INPUT_GET, "vol");
 	$page = filter_input(INPUT_GET, "page");
