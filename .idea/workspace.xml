@@ -2,11 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80ae71e4-1d09-490e-a14c-e5d063632327" name="Default" comment="">
-      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\css\manga.css" afterPath="$PROJECT_DIR$/css/manga-1.0.0.css" />
-      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\js\manga.js" afterPath="$PROJECT_DIR$/js/manga-1.0.0.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/folders.php" afterPath="$PROJECT_DIR$/php/folders.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extras/modernizr.2.8.3.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/watashi/title.txt" />
+      <change type="DELETED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\css\jquery.sidr.dark.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\css\jquery.sidr.light.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\extras\jquery.min.1.7.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\extras\jquery.sidr.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\extras\modernizr.2.5.3.min.js" afterPath="" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\css\manga-1.0.0.css" afterPath="$PROJECT_DIR$/css/manga-1.0.1.css" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\js\manga-1.0.0.js" afterPath="$PROJECT_DIR$/js/manga-1.0.1.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/watashi/volume1.json" afterPath="$PROJECT_DIR$/watashi/volume1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/watashi/volume14.json" afterPath="$PROJECT_DIR$/watashi/volume14.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/watashi/volume2.json" afterPath="$PROJECT_DIR$/watashi/volume2.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="manga-reader.iws" />
@@ -30,19 +38,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="manga-1.0.0.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/manga-1.0.0.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="0" selection-start="1593" selection-end="1593" vertical-scroll-proportion="0.0" vertical-offset="1250" max-vertical-offset="5874">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="291" column="84" selection-start="11436" selection-end="11436" vertical-scroll-proportion="0.53521127" vertical-offset="6098" max-vertical-offset="6666">
+            <state line="116" column="34" selection-start="4522" selection-end="4522" vertical-scroll-proportion="-2.440141" vertical-offset="3938" max-vertical-offset="7744">
               <folding />
             </state>
           </provider>
@@ -85,6 +84,21 @@
         <option value="$PROJECT_DIR$/js/manga.js" />
         <option value="$PROJECT_DIR$/php/folders.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-1/folders.php" />
+        <option value="$PROJECT_DIR$/css/book.css" />
+        <option value="$PROJECT_DIR$/watashi/volume2.html" />
+        <option value="$PROJECT_DIR$/watashi/volume14.html" />
+        <option value="$PROJECT_DIR$/watashi/volume1.html" />
+        <option value="$PROJECT_DIR$/watashi/volume1.json" />
+        <option value="$PROJECT_DIR$/watashi/volume14.json" />
+        <option value="$PROJECT_DIR$/watashi/volume2.json" />
+        <option value="$PROJECT_DIR$/extras/modernizr.2.8.3.js" />
+        <option value="$PROJECT_DIR$/extras/modernizr.2.8.3.min.js" />
+        <option value="$PROJECT_DIR$/css/manga-1.0.0.css" />
+        <option value="$PROJECT_DIR$/css/component.css" />
+        <option value="$PROJECT_DIR$/js/manga-1.0.0.js" />
+        <option value="$PROJECT_DIR$/css/manga-1.0.1.css" />
+        <option value="$PROJECT_DIR$/watashi/info.json" />
+        <option value="$PROJECT_DIR$/watashi/title.txt" />
         <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
@@ -151,21 +165,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manga-reader" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manga-reader" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="watashi" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -182,13 +182,16 @@
     <property name="FullScreen" value="false" />
     <property name="last_opened_file_path" value="D:/Git/bin/git.exe" />
     <property name="LayoutCode.rearrangeEntriesPlain text" value="false" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="SearchEverywhereHistory" value="" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Massimo\PhpstormProjects\manga-reader\css" />
+      <recent name="C:\Users\Massimo\PhpstormProjects\manga-reader\watashi" />
       <recent name="C:\Users\Massimo\PhpstormProjects\manga-reader\svg" />
       <recent name="C:\Users\Massimo\PhpstormProjects\manga-reader" />
       <recent name="C:\Users\Massimo\PhpstormProjects\manga-reader\watashi\volume01" />
-      <recent name="C:\Users\Massimo\PhpstormProjects\manga-reader\js\vendor" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Massimo\PhpstormProjects\manga-reader\watashi" />
@@ -233,29 +236,29 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
     <layout>
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33594978" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18740849" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18740849" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32967034" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44427" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -284,15 +287,57 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state line="305" column="80" selection-start="12208" selection-end="12208" vertical-scroll-proportion="0.0" vertical-offset="6403" max-vertical-offset="6996">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="293" column="37" selection-start="11524" selection-end="11524" vertical-scroll-proportion="0.0" vertical-offset="6356" max-vertical-offset="6710">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/manga-1.0.1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="0" selection-start="1593" selection-end="1593" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5874">
+          <folding>
+            <element signature="n#!!block;n#loadPageAsImage#0" expanded="false" />
+            <element signature="n#!!block;n#loadPageAsSvg#0" expanded="false" />
+            <element signature="n#!!block;n#zoomTo#0" expanded="false" />
+            <element signature="n#!!block;n#isChrome#0" expanded="false" />
+            <element signature="n#!!block;n#disableControls#0" expanded="false" />
+            <element signature="n#!!block;n#getVolume#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="291" column="84" selection-start="11436" selection-end="11436" vertical-scroll-proportion="0.0" vertical-offset="6098" max-vertical-offset="6666">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="26" selection-start="1185" selection-end="1185" vertical-scroll-proportion="0.0" vertical-offset="1386" max-vertical-offset="6644">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/manga-1.0.0.js">
+    <entry file="file://$PROJECT_DIR$/js/manga-1.0.1.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="221" column="21" selection-start="4729" selection-end="4729" vertical-scroll-proportion="0.0" vertical-offset="4862" max-vertical-offset="5280">
-          <folding />
+          <folding>
+            <element signature="n#!!block;n#loadPageAsImage#0" expanded="false" />
+            <element signature="n#!!block;n#loadPageAsSvg#0" expanded="false" />
+            <element signature="n#!!block;n#zoomTo#0" expanded="false" />
+            <element signature="n#!!block;n#isChrome#0" expanded="false" />
+            <element signature="n#!!block;n#disableControls#0" expanded="false" />
+            <element signature="n#!!block;n#getVolume#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -301,7 +346,7 @@
         <state line="62" column="46" selection-start="2405" selection-end="2405" vertical-scroll-proportion="0.0" vertical-offset="5262" max-vertical-offset="5830" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/manga-1.0.0.js">
+    <entry file="file://$PROJECT_DIR$/js/manga-1.0.1.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="78" column="47" selection-start="1498" selection-end="1498" vertical-scroll-proportion="0.0" vertical-offset="1716" max-vertical-offset="4840" />
       </provider>
@@ -311,22 +356,22 @@
         <state line="243" column="4" selection-start="9475" selection-end="9475" vertical-scroll-proportion="0.0" vertical-offset="4910" max-vertical-offset="5786" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/manga-1.0.0.js">
+    <entry file="file://$PROJECT_DIR$/js/manga-1.0.1.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="78" column="47" selection-start="1498" selection-end="1498" vertical-scroll-proportion="0.0" vertical-offset="1716" max-vertical-offset="4840" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/manga-1.0.0.js">
+    <entry file="file://$PROJECT_DIR$/js/manga-1.0.1.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="78" column="47" selection-start="1498" selection-end="1498" vertical-scroll-proportion="0.0" vertical-offset="1716" max-vertical-offset="4840" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/manga-1.0.0.js">
+    <entry file="file://$PROJECT_DIR$/js/manga-1.0.1.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="12" selection-start="12" selection-end="12" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4708" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/manga-1.0.0.css">
+    <entry file="file://$PROJECT_DIR$/css/manga-1.0.1.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="13" selection-start="308" selection-end="308" vertical-scroll-proportion="0.0" vertical-offset="4422" max-vertical-offset="6028" />
       </provider>
@@ -439,89 +484,75 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/manga-1.0.0.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="240" column="40" selection-start="5512" selection-end="5512" vertical-scroll-proportion="0.53114754" vertical-offset="4956" max-vertical-offset="6688" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/AnimatedBooks/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="34" selection-start="1556" selection-end="1556" vertical-scroll-proportion="-3.2147887" vertical-offset="2574" max-vertical-offset="4818" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/AnimatedBooks/index2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.92957747" vertical-offset="528" max-vertical-offset="4268" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/AnimatedBooks/fonts/codropsicons/codropsicons.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="638" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/AnimatedBooks/css/book.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-25.075409" vertical-offset="15296" max-vertical-offset="15906" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/AnimatedBooks/css/demo.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-3.977049" vertical-offset="2426" max-vertical-offset="3036" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/AnimatedBooks/css/normalize.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="597" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/watashi/volume1.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="14" selection-start="14" selection-end="14" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="358" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/watashi/volume14.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="13" selection-start="13" selection-end="13" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="358" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="0" selection-start="127" selection-end="127" vertical-scroll-proportion="0.2885246" vertical-offset="0" max-vertical-offset="610" />
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-1/folders.php">
+    <entry file="file://$PROJECT_DIR$/extras/modernizr.2.8.3.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="597">
+        <state line="1" column="17" selection-start="63" selection-end="63" vertical-scroll-proportion="0.057441253" vertical-offset="0" max-vertical-offset="383" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/manga-1.0.1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="245" column="16" selection-start="6126" selection-end="6126" vertical-scroll-proportion="3.7409837" vertical-offset="1656" max-vertical-offset="4180">
+          <folding>
+            <element signature="n#!!block;n#loadPageAsImage#0" expanded="false" />
+            <element signature="n#!!block;n#loadPageAsSvg#0" expanded="false" />
+            <element signature="n#!!block;n#zoomTo#0" expanded="false" />
+            <element signature="n#!!block;n#isChrome#0" expanded="false" />
+            <element signature="n#!!block;n#disableControls#0" expanded="false" />
+            <element signature="n#!!block;n#getVolume#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/manga-1.0.1.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="242" column="9" selection-start="5589" selection-end="5589" vertical-scroll-proportion="0.44444445" vertical-offset="5148" max-vertical-offset="6842">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/watashi/volume2.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="241" selection-start="0" selection-end="241" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="132">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/watashi/volume1.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="302" selection-start="0" selection-end="302" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="132">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/watashi/volume14.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="177" selection-start="0" selection-end="177" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="354">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/watashi/title.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="23" selection-start="23" selection-end="23" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="396">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/php/folders.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="19" selection-start="246" selection-end="246" vertical-scroll-proportion="0.3786575" vertical-offset="0" max-vertical-offset="1078">
+        <state line="26" column="79" selection-start="864" selection-end="915" vertical-scroll-proportion="-8.206897" vertical-offset="334" max-vertical-offset="1078">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/manga-1.0.0.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="0" selection-start="1593" selection-end="1593" vertical-scroll-proportion="0.0" vertical-offset="1250" max-vertical-offset="5874">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/extras/modernizr.2.5.3.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="597">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="291" column="84" selection-start="11436" selection-end="11436" vertical-scroll-proportion="0.53521127" vertical-offset="6098" max-vertical-offset="6666">
+        <state line="116" column="34" selection-start="4522" selection-end="4522" vertical-scroll-proportion="-2.440141" vertical-offset="3938" max-vertical-offset="7744">
           <folding />
         </state>
       </provider>

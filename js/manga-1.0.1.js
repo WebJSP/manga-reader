@@ -172,12 +172,6 @@ function getViewNumber(book, page) {
 	return parseInt((page || book.turn('page'))/2 + 1, 10);
 }
 
-function moveBar(yes) {
-	if (Modernizr && Modernizr.csstransforms) {
-		$('#slider .ui-slider-handle').css({zIndex: yes ? -1 : 10000});
-	}
-}
-
 // Width of the flipbook when zoomed in
 
 function largeMagazineWidth() {
@@ -248,6 +242,8 @@ function exitFullscreen() {
         document.mozCancelFullScreen();
     } else if(document.webkitExitFullscreen) {
         document.webkitExitFullscreen();
+    } else if(element.msExitFullscreen) {
+        document.msExitFullscreen();
     }
     fullscreenEnabled = false;
 }

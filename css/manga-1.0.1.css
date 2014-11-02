@@ -1,8 +1,11 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+
 body{
 	overflow:hidden;
 	background-color:#fcfcfc;
 	margin:0;
 	padding:0;
+    font-family: 'Lato', Calibri, Arial, sans-serif;
 }
 
 .manga-viewport .container{
@@ -242,6 +245,10 @@ body{
     background-size:22px 22px;
     stroke: gray;
     cursor: pointer;
+}
+
+.manga-menu:hover{
+    stroke: black;
 }
 
 .fullscreen-icon{

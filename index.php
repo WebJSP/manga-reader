@@ -9,6 +9,7 @@
 	if (!isset($page)) {
 		$page = 1;
 	}
+    $mangaTitle = utf8_encode(file_get_contents($folder."/title.txt"));
 ?>
 <!doctype html>
 <!--[if lt IE 7 ]> <html lang="en" class="ie6"> <![endif]-->
@@ -19,16 +20,35 @@
 <head>
     <title>Manga Reader</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
-    <link rel="stylesheet" href="css/jquery.sidr.light.css">
-    <script type="text/javascript" src="extras/jquery.min.1.7.js"></script>
-    <script type="text/javascript" src="extras/jquery.sidr.min.js"></script>
-    <script type="text/javascript" src="extras/modernizr.2.5.3.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="extras/modernizr.2.8.3.min.js"></script>
     <script type="text/javascript" src="lib/hash.js"></script>
+    <style type="text/css">
+        .mm-menu li.img:after
+        {
+            margin-left: 80px !important;
+        }
+        .mm-menu li.img a
+        {
+            font-size: 16px;
+        }
+        .mm-menu li.img a img
+        {
+            float: left;
+            margin: -5px 10px -5px 0;
+        }
+        .mm-menu li.img a small
+        {
+            font-size: 12px;
+        }
+    </style>
+
 </head>
 <body>
     <div id="canvas">
-        <div id="manga-menu" href="#sidr"></div>
-        <div id="sidr"><ul></ul></div>
+        <a id="manga-menu" href="#my-manga-menu"></a>
+        <nav id="my-manga-menu"><ul></ul></nav>
         <div class="zoom-icon zoom-icon-in"></div>
         <div class="fullscreen-icon"></div>
         <div class="manga-viewport">
@@ -70,10 +90,38 @@
             }, function(data) {
             	mangaReader.data = data;
                 // build the menu
+                var menu = $('#my-manga-menu').children('ul');
                 for(var index=0; index<mangaReader.data.length; index++) {
-                    $('<li><a href="#">'+mangaReader.data[index].info.name+'</a></li>').appendTo('#sidr>ul');
+                    var menuRow =
+                        '<li class="img"><a href="#"><img src="<?php echo $folder;?>/volume'+
+                        mangaReader.data[index].info.volume+
+                        '.jpg" />'+
+                        mangaReader.data[index].info.name+
+                        '</a><ul>';
+                    for(var subIndex=0; subIndex<mangaReader.data[index].info.chapters.length; subIndex++) {
+                        var targetPage = mangaReader.data[index].info.chapters[subIndex].page,
+                            title = mangaReader.data[index].info.chapters[subIndex].title;
+                        menuRow += '<li><a href="index.php?manga=<?php echo $folder?>&vol='+
+                        mangaReader.data[index].info.volume+'#page/'+targetPage+'">'+title+'<br/><small></small></a></li>';
+                    }
+                    menuRow += '</ul></li>';
+                    $(menuRow).appendTo(menu);
                 }
-                $('#manga-menu').sidr({displace: false});
+                $("#my-manga-menu").mmenu({
+                    classes: "mm-light",
+                    offCanvas: {
+                        zposition: "front"
+                    },
+                    header: {
+                        title: "<?php echo $mangaTitle;?>",
+                        add: true,
+                        update: true
+                    }
+                }).on("click", "a[href=\"#\"]",
+                    function(e) {
+                        e.preventDefault();
+                    }
+                );
 
                 mangaReader.activeVolume = getVolume(mangaReader.volume);
 	            // Create the flipbook
@@ -289,7 +337,8 @@
             test : Modernizr.csstransforms,
             yep: ['lib/turn.js'],
             nope: ['lib/turn.html4.min.js'],
-            both: ['lib/zoom.min.js', /*'extras/fabric.min.js',*/ 'js/manga-1.0.0.js', 'css/manga-1.0.0.css'],
+            both: ['lib/zoom.min.js', 'js/manga-1.0.1.js', 'extras/jquery.mmenu.min.all.js',
+                'css/manga-1.0.1.css', 'css/jquery.mmenu.all.css', 'css/jquery.mmenu.themes.css'],
             complete: loadApp
         });
 
