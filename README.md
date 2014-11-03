@@ -19,7 +19,7 @@ All standards compliant browsers and platforms such as Desktops, Tablets, Smartp
 
 ## Support
 
-If you're having problems, use the github's <a href="/mperin/manga-reader/issues">issue tracker</a>.
+If you're having problems, use the github's <a href="https://github.com/mperin/manga-reader/issues">issue tracker</a>.
 
 ## License
 
