@@ -350,7 +350,7 @@
             test : Modernizr.csstransforms,
             yep: ['lib/turn.js'],
             nope: ['lib/turn.html4.min.js'],
-            both: ['lib/zoom.min.js', 'js/manga-1.0.2.js', 'extras/jquery.mmenu.min.all.js',
+            both: ['lib/zoom.min.js', 'js/manga-1.0.3.js', 'extras/jquery.mmenu.min.all.js',
                 'css/manga-1.0.1.css', 'css/jquery.mmenu.all.css', 'css/jquery.mmenu.themes.css'],
             complete: loadApp
         });
