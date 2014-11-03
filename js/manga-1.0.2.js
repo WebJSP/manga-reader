@@ -242,7 +242,7 @@ function exitFullscreen() {
         document.mozCancelFullScreen();
     } else if(document.webkitExitFullscreen) {
         document.webkitExitFullscreen();
-    } else if(element.msExitFullscreen) {
+    } else if(document.msExitFullscreen) {
         document.msExitFullscreen();
     }
     fullscreenEnabled = false;

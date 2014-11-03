@@ -3,11 +3,14 @@
     $uaInfo = parse_user_agent();
     $browser = $uaInfo['browser'];
     $version = $uaInfo['version'];
+    if (is_numeric($uaInfo['version'])) {
+        $version = \intval($version);
+    }
     $folder = filter_input(INPUT_GET, "manga");
     $volume = filter_input(INPUT_GET, "vol");
     $page = filter_input(INPUT_GET, "page");
     if (!isset($page)) {
-            $page = 1;
+        $page = 1;
     }
     if (file_exists($folder."/title.txt")) {
         $mangaTitle = utf8_encode(file_get_contents($folder."/title.txt"));
@@ -15,13 +18,17 @@
         $mangaTitle = $folder;
     }
 ?><!doctype html>
-<!--[if lt IE 7 ]> <html lang="en" class="ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<html lang="en"<?php 
+    if($browser=='MSIE' && $version<7) {  
+        echo ' class="ie6"'; 
+    } else if($browser=='MSIE' && $version==7) {  
+        echo ' class="ie7"'; 
+    } else if($browser=='MSIE' && $version==8) {  
+        echo ' class="ie8"'; 
+    } else if($browser=='MSIE' && $version==9) {  
+        echo ' class="ie9"'; 
+    }?>>
 <head>
-    <!-- <?php echo $browser.' '.$version?> -->
     <title>Manga Reader</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -343,7 +350,7 @@
             test : Modernizr.csstransforms,
             yep: ['lib/turn.js'],
             nope: ['lib/turn.html4.min.js'],
-            both: ['lib/zoom.min.js', 'js/manga-1.0.1.js', 'extras/jquery.mmenu.min.all.js',
+            both: ['lib/zoom.min.js', 'js/manga-1.0.2.js', 'extras/jquery.mmenu.min.all.js',
                 'css/manga-1.0.1.css', 'css/jquery.mmenu.all.css', 'css/jquery.mmenu.themes.css'],
             complete: loadApp
         });
