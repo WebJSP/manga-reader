@@ -19,10 +19,9 @@ All standards compliant browsers and platforms such as Desktops, Tablets, Smartp
 
 ## Support
 
-If you're having problems, use the github's issue tracker.
-
-<a href="http://codersclan.net/forum/index.php?repo_id=9"></a>
+If you're having problems, use the github's <a href="/mperin/manga-reader/issues">issue tracker</a>.
 
 ## License
+
 Copyright (c) 2014 Massimo Perin 
 Licensed under the GPL-3 license.
