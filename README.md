@@ -1,9 +1,7 @@
 # manga-reader
-
 manga-reader is a modern, html5 compliant Manga (japanese comics) Reader that support RTL.
 
 ## What is Supported?
-
 All standards compliant browsers and platforms such as Desktops, Tablets, Smartphones, Google TV, and more!
 
 * Microsoft Internet Explorer 11+ 
@@ -13,20 +11,23 @@ All standards compliant browsers and platforms such as Desktops, Tablets, Smartp
 * HTML5 browsers (smart phones, TVs, etc.)
 
 ## To Dos
-
 * use a unique configuration file for each manga
-* Create a private dashboard to: add a new manga, allow to upload, resize and crop images, allow to generate svg files from clean scans, allow to edit svg files (to add formatted texts), allow to export svg file to bitmaps (jpg or png), edit manga configuration file
+* Create a private dashboard to: 
+	* add a new manga
+	* allow to upload
+	* resize and crop images
+	* allow to generate svg files from clean scans
+	* allow to edit svg files (to add formatted texts)
+	* allow to export svg file to bitmaps (jpg or png)
+	* edit manga configuration file
 
 ## Features
-
 * Read Jpeg, Png or Svg files.
 * Built on Modernzr and jQuery 1.11.1
 
 ## Support
-
 If you're having problems, use the github's <a href="https://github.com/mperin/manga-reader/issues">issue tracker</a>.
 
 ## License
-
 Copyright (c) 2014 Massimo Perin 
 Licensed under the GPL-3 license.
