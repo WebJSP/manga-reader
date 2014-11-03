@@ -1,8 +1,8 @@
 <?php
     require 'phplib/UserAgentParser.php';
     $uaInfo = parse_user_agent();
-    $browser = $uaInfo[''];
-    $version = $uaInfo[''];
+    $browser = $uaInfo['browser'];
+    $version = $uaInfo['version'];
     $folder = filter_input(INPUT_GET, "manga");
     $volume = filter_input(INPUT_GET, "vol");
     $page = filter_input(INPUT_GET, "page");
@@ -25,7 +25,9 @@
     <title>Manga Reader</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
     <script type="text/javascript" src="extras/modernizr.2.8.3.min.js"></script>
     <script type="text/javascript" src="lib/hash.js"></script>
     <style type="text/css">
