@@ -4,21 +4,25 @@
     $userAgent = new \phpUserAgent();
     $browser = $userAgent->getBrowserName();
     $version = $userAgent->getBrowserVersion();
-	$folder = filter_input(INPUT_GET, "manga");
-	$volume = filter_input(INPUT_GET, "vol");
-	$page = filter_input(INPUT_GET, "page");
-	if (!isset($page)) {
-		$page = 1;
-	}
-    $mangaTitle = utf8_encode(file_get_contents($folder."/title.txt"));
-?>
-<!doctype html>
+    $folder = filter_input(INPUT_GET, "manga");
+    $volume = filter_input(INPUT_GET, "vol");
+    $page = filter_input(INPUT_GET, "page");
+    if (!isset($page)) {
+            $page = 1;
+    }
+    if (file_exists($folder."/title.txt")) {
+        $mangaTitle = utf8_encode(file_get_contents($folder."/title.txt"));
+    } else {
+        $mangaTitle = $folder;
+    }
+?><!doctype html>
 <!--[if lt IE 7 ]> <html lang="en" class="ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html lang="en" class="ie7"> <![endif]-->
 <!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9 ]>    <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
+    <!-- <?php echo $browser.' '.$version?> -->
     <title>Manga Reader</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
