@@ -13,8 +13,11 @@ All standards compliant browsers and platforms such as Desktops, Tablets, Smartp
 ## Features
 * Read Jpeg, Png or Svg files (all images must have the same width and height).
 * Built on Modernzr and jQuery 1.11.1
+* Works with manga stored in a web site folder
 
 ## To Dos
+* support external manga folders (full url)
+* support dropbox manga folders
 * use a unique configuration file for each manga
 * Create a private dashboard to: 
 	* add a new manga
