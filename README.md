@@ -27,6 +27,30 @@ All standards compliant browsers and platforms such as Desktops, Tablets, Smartp
 	* allow to export svg file to bitmaps (jpg or png)
 	* edit manga configuration file
 
+## Manga Files structure and formats
+
+In each manga folder we'll have the following files and sub-folders:
+* _title.txt_ which contains the complete title of the manga.
+* for each volume of the manga we'll have the following files and folders:
+	* _volume[0-9]+_ folder(s)
+		* any image file of allowed types (jpg, png and svg), the files will be loaded following a natural sort
+		* if we'll have svg files there will be an _img_ folder used to store linked jpg images (if any)
+	* _volume[0-9]+.json_ file(s) which contains all the chapters definitions
+	* _volume[0-9]+.jpg_ file(s) which contains the covers used in the menu (max height 100px)
+
+### _volume[0-9]+.json_ file format
+<code>
+{
+"volume": 14, 
+"name": "Volume 14", 
+"description": "", 
+"chapters": [
+{"no": 54, "title": "Mission 54: ", "page": 1},
+{"no": 55, "title": "Mission 55: Cuore Pulsante", "page": 4}
+]}
+</code>
+	
+
 ## Support
 If you're having problems, use the github's <a href="https://github.com/mperin/manga-reader/issues">issue tracker</a>.
 
