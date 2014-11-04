@@ -10,19 +10,19 @@ All standards compliant browsers and platforms such as Desktops, Tablets, Smartp
 * Apple Safari 5+ / iPhone / iPod Touch / iPad
 * HTML5 browsers (smart phones, TVs, etc.)
 
+## Features
+* Read Jpeg, Png or Svg files (all images must have the same width and height).
+* Built on Modernzr and jQuery 1.11.1
+
 ## To Dos
 * use a unique configuration file for each manga
 * Create a private dashboard to: 
 	* add a new manga
 	* allow to upload, resize and crop images
 	* allow to generate svg files from clean scans
-	* allow to edit svg files (to add formatted texts)
+	* allow to edit svg files to add formatted texts
 	* allow to export svg file to bitmaps (jpg or png)
 	* edit manga configuration file
-
-## Features
-* Read Jpeg, Png or Svg files.
-* Built on Modernzr and jQuery 1.11.1
 
 ## Support
 If you're having problems, use the github's <a href="https://github.com/mperin/manga-reader/issues">issue tracker</a>.
