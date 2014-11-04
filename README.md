@@ -39,16 +39,24 @@ In each manga folder we'll have the following files and sub-folders:
 	* _volume[0-9]+.jpg_ file(s) which contains the covers used in the menu (max height 100px)
 
 ### _volume[0-9]+.json_ file format
-<code>
+``` json
 {
-"volume": 14, 
-"name": "Volume 14", 
-"description": "", 
-"chapters": [
-{"no": 54, "title": "Mission 54: ", "page": 1},
-{"no": 55, "title": "Mission 55: Cuore Pulsante", "page": 4}
-]}
-</code>
+  "volume": [0-9]+, /* number of the volume (1+) */
+  "name": "Volume [0-9]+", /* used in the menu creation */
+  "description": "", /* used in the menu creation */
+  "chapters": [
+    {
+      "no": [0-9]+, /* number of the chapter (1+) */
+      "title": "any text", /* used in the menu creation */
+      "page": 1 /* used in the menu creation, when clicked the books will go to that page */
+    },{
+      "no": 55, 
+      "title": "Mission 55: Cuore Pulsante", 
+      "page": 4
+    }
+  ]
+}
+```
 	
 
 ## Support
