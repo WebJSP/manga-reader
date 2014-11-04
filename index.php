@@ -81,16 +81,121 @@
     		page: <?php echo $page; ?>,
             volume: <?php echo $volume; ?>,
             activeVolume: undefined
-    	};
+        }, flipbook = $('.manga');
 
         var fullscreenEnabled = false;
             //document.fullscreenEnabled ||
             //document.mozFullScreenEnabled ||
             //document.webkitFullscreenEnabled;
 
+        function createFlipbook() {
+            // Create the flipbook
+            flipbook.turn({
+                // manga width
+                width: largeMagazineWidth(),
+                // manga height
+                height: 1057,
+                // Duration in millisecond
+                duration: 800,
+                // Hardware acceleration
+                acceleration: !isChrome(),
+                // Enables gradients
+                gradients: true,
+                // Auto center this flipbook
+                autoCenter: true,
+                // Elevation from the edge of the flipbook when turning a page
+                elevation: 50,
+                // The number of pages
+                pages: mangaReader.activeVolume.files.length,
+                // The pages direction
+                direction: 'rtl',
+                // Events
+                when: {
+                    turning: function (event, page, view) {
+                        var book = $(this),
+                            currentPage = book.turn('page'),
+                            pages = book.turn('pages');
+                        // Update the current URI
+                        Hash.go('page/' + page).update();
+                        // Show and hide navigation buttons
+                        disableControls(page);
+                    },
+
+                    turned: function (event, page, view) {
+                        disableControls(page);
+                        $(this).turn('center');
+                        if (page == 1) {
+                            $(this).turn('peel', 'br');
+                        }
+                    },
+
+                    missing: function (event, pages) {
+                        // Add pages that aren't in the manga
+                        for (var i = 0; i < pages.length; i++)
+                            addPage(pages[i], $(this));
+                    }
+                }
+            });
+
+            // Zoom.js
+            $('.manga-viewport').zoom({
+                flipbook: $('.manga'),
+                max: function() {
+                    return largeMagazineWidth()/$('.manga').width();
+                },
+                when: {
+                    swipeLeft: function() {
+                        $(this).zoom('flipbook').turn('previous');
+                    },
+
+                    swipeRight: function() {
+                        $(this).zoom('flipbook').turn('next');
+                    },
+
+                    resize: function(event, scale, page, pageElement) {
+                        //loadPage(page, pageElement);
+                    },
+
+                    zoomIn: function () {
+                        $('.made').hide();
+                        $('.manga').removeClass('animated').addClass('zoom-in');
+                        $('.zoom-icon').removeClass('zoom-icon-in').addClass('zoom-icon-out');
+
+                        if (!window.escTip && !$.isTouch) {
+                            escTip = true;
+                            $('<div />', {'class': 'exit-message'}).
+                                html('<div>Press ESC to exit</div>').
+                                appendTo($('body')).
+                                delay(2000).
+                                animate({opacity:0}, 500, function() {
+                                    $(this).remove();
+                                });
+                        }
+                    },
+
+                    zoomOut: function () {
+                        $('.exit-message').hide();
+                        $('.made').fadeIn();
+                        $('.zoom-icon').removeClass('zoom-icon-out').addClass('zoom-icon-in');
+
+                        setTimeout(function(){
+                            $('.manga').addClass('animated').removeClass('zoom-in');
+                            resizeViewport();
+                        }, 0);
+                    }
+                }
+            });
+
+            // Zoom event
+            if ($.isTouch)
+                $('.manga-viewport').bind('zoom.doubleTap', zoomTo);
+            else
+                $('.manga-viewport').bind('zoom.tap', zoomTo);
+        }
+
         function loadApp() {
             $('#canvas').fadeIn(1000);
-            var flipbook = $('.manga');
+            //var flipbook = $('.manga');
 
             // Check if the CSS was already loaded
             if (flipbook.width()==0 || flipbook.height()==0) {
@@ -105,17 +210,28 @@
                 // build the menu
                 var menu = $('#my-manga-menu').children('ul');
                 for(var index=0; index<mangaReader.data.length; index++) {
+                    var description = mangaReader.data[index].info.description,
+                        volumeNo = mangaReader.data[index].info.volume,
+                        volumeName = mangaReader.data[index].info.name;
+
                     var menuRow =
-                        '<li class="img"><a href="#"><img src="<?php echo $folder;?>/volume'+
-                        mangaReader.data[index].info.volume+
-                        '.jpg" />'+
-                        mangaReader.data[index].info.name+
-                        '</a><ul>';
+                        '<li class="img">'+
+                            '<a href="#">'+
+                                '<img src="<?php echo $folder;?>/volume'+volumeNo+'.jpg" />'+
+                                volumeName+'<br/>'+
+                                '<small>'+description+'</small>'+
+                            '</a>'+
+                            '<ul>';
+
                     for(var subIndex=0; subIndex<mangaReader.data[index].info.chapters.length; subIndex++) {
-                        var targetPage = mangaReader.data[index].info.chapters[subIndex].page,
-                            title = mangaReader.data[index].info.chapters[subIndex].title;
-                        menuRow += '<li><a href="index.php?manga=<?php echo $folder?>&vol='+
-                        mangaReader.data[index].info.volume+'#page/'+targetPage+'">'+title+'<br/><small></small></a></li>';
+                        var chapterPage = mangaReader.data[index].info.chapters[subIndex].page,
+                            chapterTitle = mangaReader.data[index].info.chapters[subIndex].title;
+
+                        menuRow +=
+                            '<li data-volume="'+volumeNo+'" data-page="'+chapterPage+'">'+
+                            '<a href="#">'+chapterTitle+'</a>'+
+                            '</li>';
+
                     }
                     menuRow += '</ul></li>';
                     $(menuRow).appendTo(menu);
@@ -130,115 +246,33 @@
                         add: true,
                         update: true
                     }
-                }).on("click", "a[href=\"#\"]",
+                })
+                .find('a')
+                .on("click",
                     function(e) {
+                        var li = $(this).parent('li');
+                        if (li.length>0 && !li.hasClass('img')) {
+                            var chapterPage = li.data('page'),
+                                volumeNo = li.data('volume');
+                            $("#my-manga-menu").trigger("close.mm");
+                            if (mangaReader.activeVolume.info.volume!=volumeNo){
+                                mangaReader.volume = volumeNo;
+                                mangaReader.activeVolume = getVolume(mangaReader.volume);
+                                $('.manga').turn('destroy');
+                                createFlipbook();
+                                resizeViewport();
+                            }
+                            if ($('.manga').turn('is'))
+                                $('.manga').turn('page', chapterPage);
+                            // Update the current URI
+                            Hash.go('page/' + chapterPage).update();
+                        }
                         e.preventDefault();
                     }
-                );
+                ).end();
 
                 mangaReader.activeVolume = getVolume(mangaReader.volume);
-	            // Create the flipbook
-	            flipbook.turn({
-	                // manga width
-	                width: largeMagazineWidth(),
-	                // manga height
-	                height: 1057,
-	                // Duration in millisecond
-	                duration: 800,
-	                // Hardware acceleration
-	                acceleration: !isChrome(),
-	                // Enables gradients
-	                gradients: true,
-	                // Auto center this flipbook
-	                autoCenter: true,
-	                // Elevation from the edge of the flipbook when turning a page
-	                elevation: 50,
-	                // The number of pages
-	                pages: mangaReader.activeVolume.files.length,
-	                // The pages direction
-	                direction: 'rtl',
-	                // Events
-	                when: {
-	                    turning: function(event, page, view) {
-	                        var book = $(this),
-	                        currentPage = book.turn('page'),
-	                        pages = book.turn('pages');
-	                        // Update the current URI
-	                        Hash.go('page/' + page).update();
-	                        // Show and hide navigation buttons
-	                        disableControls(page);
-	                    },
-
-	                    turned: function(event, page, view) {
-	                        disableControls(page);
-	                        $(this).turn('center');
-	                        if (page==1) {
-	                            $(this).turn('peel', 'br');
-	                        }
-	                    },
-
-	                    missing: function (event, pages) {
-	                        // Add pages that aren't in the manga
-	                        for (var i = 0; i < pages.length; i++)
-	                            addPage(pages[i], $(this));
-	                    }
-	                }
-	            });
-
-	            // Zoom.js
-	            $('.manga-viewport').zoom({
-	                flipbook: $('.manga'),
-	                max: function() {
-	                    return largeMagazineWidth()/$('.manga').width();
-	                },
-	                when: {
-	                    swipeLeft: function() {
-	                        $(this).zoom('flipbook').turn('previous');
-	                    },
-
-	                    swipeRight: function() {
-	                        $(this).zoom('flipbook').turn('next');
-	                    },
-
-	                    resize: function(event, scale, page, pageElement) {
-	                        //loadPage(page, pageElement);
-	                    },
-
-	                    zoomIn: function () {
-	                        $('.made').hide();
-	                        $('.manga').removeClass('animated').addClass('zoom-in');
-	                        $('.zoom-icon').removeClass('zoom-icon-in').addClass('zoom-icon-out');
-
-	                        if (!window.escTip && !$.isTouch) {
-	                            escTip = true;
-	                            $('<div />', {'class': 'exit-message'}).
-	                                html('<div>Press ESC to exit</div>').
-	                                    appendTo($('body')).
-	                                    delay(2000).
-	                                    animate({opacity:0}, 500, function() {
-	                                        $(this).remove();
-	                                    });
-	                        }
-	                    },
-
-	                    zoomOut: function () {
-	                        $('.exit-message').hide();
-	                        $('.made').fadeIn();
-	                        $('.zoom-icon').removeClass('zoom-icon-out').addClass('zoom-icon-in');
-
-	                        setTimeout(function(){
-	                            $('.manga').addClass('animated').removeClass('zoom-in');
-	                            resizeViewport();
-	                        }, 0);
-	                    }
-	                }
-	            });
-
-	            // Zoom event
-	            if ($.isTouch)
-	                $('.manga-viewport').bind('zoom.doubleTap', zoomTo);
-	            else
-	                $('.manga-viewport').bind('zoom.tap', zoomTo);
+                createFlipbook();
 
 	            // Using arrow keys to turn the page
 	            $(document).keydown(function(e){
