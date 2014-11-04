@@ -39,7 +39,7 @@ In each manga folder we'll have the following files and sub-folders:
 	* _volume[0-9]+.jpg_ file(s) which contains the covers used in the menu (max height 100px)
 
 ### _volume[0-9]+.json_ file format
-``` json
+```
 {
   "volume": [0-9]+, /* number of the volume (1+) */
   "name": "Volume [0-9]+", /* used in the menu creation */
