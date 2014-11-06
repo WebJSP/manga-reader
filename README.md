@@ -14,6 +14,7 @@ All standards compliant browsers and platforms such as Desktops, Tablets, Smartp
 * Read Jpeg, Png or Svg files (all images must have the same width and height).
 * Built on Modernzr and jQuery 1.11.1
 * Works with manga stored in a web site folder
+* Volume description support markdown syntax
 
 ## To Dos
 * support external manga folders (full url)
@@ -43,7 +44,7 @@ In each manga folder we'll have the following files and sub-folders:
 {
   "volume": [0-9]+, /* number of the volume (1+) */
   "name": "Volume [0-9]+", /* used in the menu creation */
-  "description": "", /* used in the menu creation */
+  "description": "", /* used in the menu creation, could be used markdown */
   "chapters": [
     {
       "no": [0-9]+, /* number of the chapter (1+) */
