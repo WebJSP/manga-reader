@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Modernizr 2.8.3" type="javaScript">
+    <properties>
+      <option name="frameworkName" value="Modernizr" />
+      <option name="frameworkVersion" value="2.8.3" />
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/extras/modernizr.2.8.3.min.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

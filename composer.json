@@ -1,5 +1,5 @@
 {
-    "name": "vendor_name/package_name",
+    "name": "mperin/manga-reader",
     "description": "description_text",
     "minimum-stability": "stable",
     "license": "GPL 3.0",
@@ -8,5 +8,8 @@
             "name": "Massimo Perin",
             "email": "perin.massimo@gmail.com"
         }
-    ]
+    ],
+    "require": {
+        "cakephp/cakephp": "2.5.5"
+    }
 }
