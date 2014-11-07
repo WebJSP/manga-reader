@@ -2,10 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80ae71e4-1d09-490e-a14c-e5d063632327" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Modernizr_2_8_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/manga-reader.iml" afterPath="$PROJECT_DIR$/.idea/manga-reader.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume1/000-F01.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume14/000-F01.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume2/000-F01.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume1/000-F02.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume14/000-F02.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume2/000-F02.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume14/img/055-078.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume14/img/055-079.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume14/img/055-080.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume14/img/055-081.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume14/img/055-082.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume1/999-B01.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume14/999-B01.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume2/999-B01.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume1/999-B02.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume14/999-B02.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume2/999-B02.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume10.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume11.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume12.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume13.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume5.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume6.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume7.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume8.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume9.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume14/055-078.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume14/055-079.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume14/055-080.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume14/055-081.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume14/055-082.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume14/999-B00.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/title.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume1.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume14.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mangas/wnxxs/volume2.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="manga-reader.iws" />
@@ -89,8 +126,9 @@
         <option value="$PROJECT_DIR$/watashi/title.txt" />
         <option value="$PROJECT_DIR$/phplib/userAgent.php" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/reader.php" />
       </list>
     </option>
   </component>
@@ -136,7 +174,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -155,8 +192,45 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manga-reader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manga-reader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manga-reader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manga-reader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cakephp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cakephp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -174,11 +248,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Massimo\PhpstormProjects\manga-reader\mangas" />
       <recent name="C:\Users\Massimo\PhpstormProjects\manga-reader\css" />
       <recent name="C:\Users\Massimo\PhpstormProjects\manga-reader\watashi" />
       <recent name="C:\Users\Massimo\PhpstormProjects\manga-reader\svg" />
       <recent name="C:\Users\Massimo\PhpstormProjects\manga-reader" />
-      <recent name="C:\Users\Massimo\PhpstormProjects\manga-reader\watashi\volume01" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Massimo\PhpstormProjects\manga-reader\watashi" />
@@ -203,15 +277,15 @@
       <BehatRunner />
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server" server_id="afb7d80e-4f9f-442e-87f5-5028a3433fad" server_name="EasyPHP">
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
       <pass-parent-env-vars>false</pass-parent-env-vars>
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server" server_id="afb7d80e-4f9f-442e-87f5-5028a3433fad" server_name="EasyPHP">
       <method />
     </configuration>
     <configuration default="false" name="composer.json" type="JavascriptDebugType" factoryName="JavaScript Debug" nameIsGenerated="true" uri="http://127.0.0.1/manga-reader/composer.json">
@@ -259,10 +333,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.93877554" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -272,18 +347,17 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293718" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="SvgViewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33594978" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3282313" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.335034" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44427" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44427" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293718" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -316,9 +390,9 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/composer.json">
+    <entry file="file://$PROJECT_DIR$/reader.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="682">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8888">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -328,7 +402,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="682">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="682">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -567,13 +647,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/turn.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-115.095085" vertical-offset="73266" max-vertical-offset="73876">
-          <caret line="139" column="4" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/zoom.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2046" max-vertical-offset="3058">
@@ -588,20 +661,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/manga-1.0.3.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.609836" vertical-offset="5616" max-vertical-offset="6226">
-          <caret line="72" column="9" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5764273" vertical-offset="4593" max-vertical-offset="7722">
-          <caret line="267" column="57" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.60273975" vertical-offset="0" max-vertical-offset="1606">
@@ -609,17 +668,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/vojant/twitter-php/Examples.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3201506" vertical-offset="701" max-vertical-offset="1232">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41353384" vertical-offset="0" max-vertical-offset="532">
           <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="531">
+          <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/turn.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.6714287" vertical-offset="71534" max-vertical-offset="73876">
+          <caret line="3345" column="0" selection-start-line="3345" selection-start-column="0" selection-end-line="3345" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/manga-1.0.3.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.4357142" vertical-offset="3620" max-vertical-offset="6226">
+          <caret line="128" column="9" selection-start-line="128" selection-start-column="9" selection-end-line="128" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5096525" vertical-offset="6710" max-vertical-offset="8888">
+          <caret line="317" column="28" selection-start-line="317" selection-start-column="28" selection-end-line="317" selection-end-column="28" />
           <folding />
         </state>
       </provider>
