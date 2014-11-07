@@ -316,6 +316,13 @@
 	            $(window).resize(function() {
 	                resizeViewport();
 	            }).bind('orientationchange', function() {
+                        if(window.orientation === 90){
+                            $('#manga').turn("display", "double");
+                            //alert('this is landscape');
+                        } else {
+                            $('#manga').turn("display", "single");
+                            //alert('this is portrait');
+                        }
 	                resizeViewport();
 	            });
 
@@ -386,7 +393,8 @@
             yep: ['lib/turn.js'],
             nope: ['lib/turn.html4.min.js'],
             both: ['lib/zoom.min.js', 'js/manga-1.0.3.js', 'extras/jquery.mmenu.min.all.js', 'extras/markdown.min.js',
-                'css/manga-1.0.1.css', 'css/jquery.mmenu.all.css', 'css/jquery.mmenu.themes.css'],
+                'extras/orientationchange.min.js', 'css/manga-1.0.1.css', 'css/jquery.mmenu.all.css', 
+                'css/jquery.mmenu.themes.css'],
             complete: loadApp
         });
 
