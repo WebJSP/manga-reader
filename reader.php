@@ -110,6 +110,9 @@
                 pages: mangaReader.activeVolume.files.length,
                 // The pages direction
                 direction: 'rtl',
+                // Display
+                display: (window.orientation && window.orientation === 90) || 
+                    typeof(window.orientation)==='undefined' ? "double" : "single",
                 // Events
                 when: {
                     turning: function (event, page, view) {
