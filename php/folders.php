@@ -1,4 +1,5 @@
 <?php
+define('DS', DIRECTORY_SEPARATOR);
 header('Content-Type: application/json; charset=utf-8');
 error_reporting(0);
 
@@ -9,22 +10,22 @@ if (!isset($folder)) {
 
 if (isset($folder)) {
     $folders = array();
-    foreach (new DirectoryIterator('../'.$folder) as $dirInfo) {
+    foreach (new DirectoryIterator('..'.DS.$folder) as $dirInfo) {
         if($dirInfo->isDot()) 
             continue;
         if(!$dirInfo->isDir()) 
             continue;
-        $path = $folder.'/'.$dirInfo->getFilename();
+        $path = $folder.DS.$dirInfo->getFilename();
         $files = array();
-        foreach (new DirectoryIterator('../'.$path) as $fileInfo) {
+        foreach (new DirectoryIterator('..'.DS.$path) as $fileInfo) {
             if($fileInfo->isDot() || !$fileInfo->isFile()) 
                 continue;
             if($fileInfo->getExtension()=='json')
                 continue;
-            $files[] = $path.'/'.$fileInfo->getFilename();
+            $files[] = $path.DS.$fileInfo->getFilename();
         }
         sort($files, SORT_STRING);
-        $info = json_decode(utf8_encode(file_get_contents('../'.$path.".json")), true);
+        $info = json_decode(utf8_encode(file_get_contents('..'.DS.$path.".json")), true);
         $contents = array();
         $contents["path"]=$path;
         $contents["files"]=$files;

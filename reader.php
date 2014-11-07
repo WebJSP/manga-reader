@@ -1,4 +1,5 @@
 <?php
+	define('DS', DIRECTORY_SEPARATOR);
     require 'phplib/UserAgentParser.php';
     $uaInfo = parse_user_agent();
     $browser = $uaInfo['browser'];
@@ -12,8 +13,8 @@
     if (!isset($page)) {
         $page = 1;
     }
-    if (file_exists($folder."/title.txt")) {
-        $mangaTitle = utf8_encode(file_get_contents($folder."/title.txt"));
+    if (file_exists($folder.DS."title.txt")) {
+        $mangaTitle = utf8_encode(file_get_contents($folder.DS."title.txt"));
     } else {
         $mangaTitle = $folder;
     }
