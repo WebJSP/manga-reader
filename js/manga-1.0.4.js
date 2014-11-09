@@ -7,15 +7,13 @@ function addPage(page, book) {
 
 	// Add the page to the flipbook
 	if (book.turn('addPage', element, page)) {
+            // Add the initial HTML
+            // It will contain a loader indicator and a gradient
+            element.html('<div class="gradient"></div><div class="loader"></div>');
 
-		// Add the initial HTML
-		// It will contain a loader indicator and a gradient
-		element.html('<div class="gradient"></div><div class="loader"></div>');
-
-		// Load the page
-        loadPage(page, element);
+            // Load the page
+            loadPage(page, element);
 	}
-
 }
 
 function loadPage(page, pageElement) {
@@ -48,7 +46,7 @@ function loadPageAsImage(page, pageElement) {
 
 function loadPageAsSvg(page, pageElement) {
     var url = mangaReader.activeVolume.files[page-1],
-        start = url.lastIndexOf("/")+1,
+        start = url.lastIndexOf(mangaReader.DS)+1,
         len = url.lastIndexOf(".")-start,
         id = url.substr(start, len);
     pageElement.load(url+' #'+id,
@@ -62,7 +60,7 @@ function loadPageAsSvg(page, pageElement) {
                 var imageHRef = svg.children('image').get(0).href.baseVal;
                 if (imageHRef.indexOf('data:')===-1) {
                     svg.children('image').get(0).href.baseVal =
-                        mangaReader.activeVolume.path+'/'+imageHRef
+                        mangaReader.activeVolume.path+'/'+imageHRef;
                 }
             }
         }
@@ -75,7 +73,7 @@ function zoomTo(event) {
         if ($('.manga-viewport').data().regionClicked) {
             $('.manga-viewport').data().regionClicked = false;
         } else {
-            if ($('.manga-viewport').zoom('value')==1) {
+            if ($('.manga-viewport').zoom('value')===1) {
                 $('.manga-viewport').zoom('zoomIn', event);
             } else {
                 $('.manga-viewport').zoom('zoomOut');
@@ -88,12 +86,12 @@ function zoomTo(event) {
 
 function isChrome() {
 
-	return navigator.userAgent.indexOf('Chrome')!=-1;
+	return navigator.userAgent.indexOf('Chrome')!==-1;
 
 }
 
 function disableControls(page) {
-    if ($('.manga').turn('direction')=='ltr') {
+    if ($('.manga').turn('direction')==='ltr') {
         disableControlsLTR(page);
     } else {
         disableControlsRTL(page);
@@ -101,24 +99,24 @@ function disableControls(page) {
 }
 
 function disableControlsLTR(page) {
-    if (page==1)
+    if (page===1)
         $('.previous-button').hide();
     else
         $('.previous-button').show();
 
-    if (page==$('.manga').turn('pages'))
+    if (page===$('.manga').turn('pages'))
         $('.next-button').hide();
     else
         $('.next-button').show();
 }
 
 function disableControlsRTL(page) {
-    if (page==1)
+    if (page===1)
         $('.next-button').hide();
     else
         $('.next-button').show();
 
-    if (page==$('.manga').turn('pages'))
+    if (page===$('.manga').turn('pages'))
         $('.previous-button').hide();
     else
         $('.previous-button').show();
@@ -141,7 +139,7 @@ function resizeViewport() {
 	zoom('resize');
 
 
-	if ($('.manga').turn('zoom')==1) {
+	if ($('.manga').turn('zoom')===1) {
 		var bound = calculateBound({
 			width: options.width,
 			height: options.height,
@@ -153,11 +151,11 @@ function resizeViewport() {
 			bound.width-=1;
 
 			
-		if (bound.width!=$('.manga').width() || bound.height!=$('.manga').height()) {
+		if (bound.width!==$('.manga').width() || bound.height!==$('.manga').height()) {
 
 			$('.manga').turn('size', bound.width, bound.height);
 
-			if ($('.manga').turn('page')==1)
+			if ($('.manga').turn('page')===1)
 				$('.manga').turn('peel', 'br');
 
 			$('.next-button').css({height: bound.height, backgroundPosition: '-38px '+(bound.height/2-32/2)+'px'});
@@ -270,7 +268,7 @@ function exitFullscreen() {
 
 function getVolume(volume) {
     for(var index=0; index<mangaReader.data.length; index++) {
-        if (mangaReader.data[index].info.volume == volume) {
+        if (mangaReader.data[index].info.volume === volume) {
             return mangaReader.data[index];
         }
     }

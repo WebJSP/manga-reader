@@ -2,7 +2,92 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80ae71e4-1d09-490e-a14c-e5d063632327" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="DELETED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\extras\orientationchange.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\extras\orientationchange.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\php\files.php" afterPath="" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\LICENSE" afterPath="$PROJECT_DIR$/dashboard/LICENSE" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\README.md" afterPath="$PROJECT_DIR$/dashboard/README.md" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\blank.html" afterPath="$PROJECT_DIR$/dashboard/blank.html" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\buttons.html" afterPath="$PROJECT_DIR$/dashboard/buttons.html" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\css\bootstrap.css" afterPath="$PROJECT_DIR$/dashboard/css/bootstrap.css" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\css\bootstrap.min.css" afterPath="$PROJECT_DIR$/dashboard/css/bootstrap.min.css" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\css\plugins\dataTables.bootstrap.css" afterPath="$PROJECT_DIR$/dashboard/css/plugins/dataTables.bootstrap.css" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\css\plugins\metisMenu\metisMenu.css" afterPath="$PROJECT_DIR$/dashboard/css/plugins/metisMenu/metisMenu.css" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\css\plugins\metisMenu\metisMenu.min.css" afterPath="$PROJECT_DIR$/dashboard/css/plugins/metisMenu/metisMenu.min.css" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\css\plugins\morris.css" afterPath="$PROJECT_DIR$/dashboard/css/plugins/morris.css" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\css\plugins\social-buttons.css" afterPath="$PROJECT_DIR$/dashboard/css/plugins/social-buttons.css" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\css\plugins\timeline.css" afterPath="$PROJECT_DIR$/dashboard/css/plugins/timeline.css" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\css\sb-admin-2.css" afterPath="$PROJECT_DIR$/dashboard/css/sb-admin-2.css" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\flot.html" afterPath="$PROJECT_DIR$/dashboard/flot.html" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\font-awesome-4.1.0\css\font-awesome.css" afterPath="$PROJECT_DIR$/dashboard/font-awesome-4.1.0/css/font-awesome.css" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\font-awesome-4.1.0\css\font-awesome.min.css" afterPath="$PROJECT_DIR$/dashboard/font-awesome-4.1.0/css/font-awesome.min.css" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\font-awesome-4.1.0\fonts\FontAwesome.otf" afterPath="$PROJECT_DIR$/dashboard/font-awesome-4.1.0/fonts/FontAwesome.otf" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\font-awesome-4.1.0\fonts\fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/dashboard/font-awesome-4.1.0/fonts/fontawesome-webfont.eot" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\font-awesome-4.1.0\fonts\fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/dashboard/font-awesome-4.1.0/fonts/fontawesome-webfont.svg" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\font-awesome-4.1.0\fonts\fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/dashboard/font-awesome-4.1.0/fonts/fontawesome-webfont.ttf" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\font-awesome-4.1.0\fonts\fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/dashboard/font-awesome-4.1.0/fonts/fontawesome-webfont.woff" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\font-awesome-4.1.0\less\bordered-pulled.less" afterPath="$PROJECT_DIR$/dashboard/font-awesome-4.1.0/less/bordered-pulled.less" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\font-awesome-4.1.0\less\core.less" afterPath="$PROJECT_DIR$/dashboard/font-awesome-4.1.0/less/core.less" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\font-awesome-4.1.0\less\fixed-width.less" afterPath="$PROJECT_DIR$/dashboard/font-awesome-4.1.0/less/fixed-width.less" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\font-awesome-4.1.0\less\font-awesome.less" afterPath="$PROJECT_DIR$/dashboard/font-awesome-4.1.0/less/font-awesome.less" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\font-awesome-4.1.0\less\icons.less" afterPath="$PROJECT_DIR$/dashboard/font-awesome-4.1.0/less/icons.less" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\font-awesome-4.1.0\less\larger.less" afterPath="$PROJECT_DIR$/dashboard/font-awesome-4.1.0/less/larger.less" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\font-awesome-4.1.0\less\list.less" afterPath="$PROJECT_DIR$/dashboard/font-awesome-4.1.0/less/list.less" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\font-awesome-4.1.0\less\mixins.less" afterPath="$PROJECT_DIR$/dashboard/font-awesome-4.1.0/less/mixins.less" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\font-awesome-4.1.0\less\path.less" afterPath="$PROJECT_DIR$/dashboard/font-awesome-4.1.0/less/path.less" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\font-awesome-4.1.0\less\rotated-flipped.less" afterPath="$PROJECT_DIR$/dashboard/font-awesome-4.1.0/less/rotated-flipped.less" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\font-awesome-4.1.0\less\spinning.less" afterPath="$PROJECT_DIR$/dashboard/font-awesome-4.1.0/less/spinning.less" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\font-awesome-4.1.0\less\stacked.less" afterPath="$PROJECT_DIR$/dashboard/font-awesome-4.1.0/less/stacked.less" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\font-awesome-4.1.0\less\variables.less" afterPath="$PROJECT_DIR$/dashboard/font-awesome-4.1.0/less/variables.less" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\font-awesome-4.1.0\scss\_bordered-pulled.scss" afterPath="$PROJECT_DIR$/dashboard/font-awesome-4.1.0/scss/_bordered-pulled.scss" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\font-awesome-4.1.0\scss\_core.scss" afterPath="$PROJECT_DIR$/dashboard/font-awesome-4.1.0/scss/_core.scss" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\font-awesome-4.1.0\scss\_fixed-width.scss" afterPath="$PROJECT_DIR$/dashboard/font-awesome-4.1.0/scss/_fixed-width.scss" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\font-awesome-4.1.0\scss\_icons.scss" afterPath="$PROJECT_DIR$/dashboard/font-awesome-4.1.0/scss/_icons.scss" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\font-awesome-4.1.0\scss\_larger.scss" afterPath="$PROJECT_DIR$/dashboard/font-awesome-4.1.0/scss/_larger.scss" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\font-awesome-4.1.0\scss\_list.scss" afterPath="$PROJECT_DIR$/dashboard/font-awesome-4.1.0/scss/_list.scss" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\font-awesome-4.1.0\scss\_mixins.scss" afterPath="$PROJECT_DIR$/dashboard/font-awesome-4.1.0/scss/_mixins.scss" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\font-awesome-4.1.0\scss\_path.scss" afterPath="$PROJECT_DIR$/dashboard/font-awesome-4.1.0/scss/_path.scss" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\font-awesome-4.1.0\scss\_rotated-flipped.scss" afterPath="$PROJECT_DIR$/dashboard/font-awesome-4.1.0/scss/_rotated-flipped.scss" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\font-awesome-4.1.0\scss\_spinning.scss" afterPath="$PROJECT_DIR$/dashboard/font-awesome-4.1.0/scss/_spinning.scss" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\font-awesome-4.1.0\scss\_stacked.scss" afterPath="$PROJECT_DIR$/dashboard/font-awesome-4.1.0/scss/_stacked.scss" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\font-awesome-4.1.0\scss\_variables.scss" afterPath="$PROJECT_DIR$/dashboard/font-awesome-4.1.0/scss/_variables.scss" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\font-awesome-4.1.0\scss\font-awesome.scss" afterPath="$PROJECT_DIR$/dashboard/font-awesome-4.1.0/scss/font-awesome.scss" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\fonts\glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/dashboard/fonts/glyphicons-halflings-regular.eot" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\fonts\glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/dashboard/fonts/glyphicons-halflings-regular.svg" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\fonts\glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/dashboard/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\fonts\glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/dashboard/fonts/glyphicons-halflings-regular.woff" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\forms.html" afterPath="$PROJECT_DIR$/dashboard/forms.html" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\grid.html" afterPath="$PROJECT_DIR$/dashboard/grid.html" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\index.html" afterPath="$PROJECT_DIR$/dashboard/dashboard.html" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\js\bootstrap.js" afterPath="$PROJECT_DIR$/dashboard/js/bootstrap.js" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\js\bootstrap.min.js" afterPath="$PROJECT_DIR$/dashboard/js/bootstrap.min.js" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\js\jquery.js" afterPath="$PROJECT_DIR$/dashboard/js/jquery.js" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\js\plugins\dataTables\dataTables.bootstrap.js" afterPath="$PROJECT_DIR$/dashboard/js/plugins/dataTables/dataTables.bootstrap.js" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\js\plugins\dataTables\jquery.dataTables.js" afterPath="$PROJECT_DIR$/dashboard/js/plugins/dataTables/jquery.dataTables.js" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\js\plugins\flot\excanvas.min.js" afterPath="$PROJECT_DIR$/dashboard/js/plugins/flot/excanvas.min.js" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\js\plugins\flot\flot-data.js" afterPath="$PROJECT_DIR$/dashboard/js/plugins/flot/flot-data.js" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\js\plugins\flot\jquery.flot.js" afterPath="$PROJECT_DIR$/dashboard/js/plugins/flot/jquery.flot.js" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\js\plugins\flot\jquery.flot.pie.js" afterPath="$PROJECT_DIR$/dashboard/js/plugins/flot/jquery.flot.pie.js" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\js\plugins\flot\jquery.flot.resize.js" afterPath="$PROJECT_DIR$/dashboard/js/plugins/flot/jquery.flot.resize.js" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\js\plugins\flot\jquery.flot.tooltip.min.js" afterPath="$PROJECT_DIR$/dashboard/js/plugins/flot/jquery.flot.tooltip.min.js" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\js\plugins\metisMenu\metisMenu.js" afterPath="$PROJECT_DIR$/dashboard/js/plugins/metisMenu/metisMenu.js" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\js\plugins\metisMenu\metisMenu.min.js" afterPath="$PROJECT_DIR$/dashboard/js/plugins/metisMenu/metisMenu.min.js" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\js\plugins\morris\morris-data.js" afterPath="$PROJECT_DIR$/dashboard/js/plugins/morris/morris-data.js" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\js\plugins\morris\morris.js" afterPath="$PROJECT_DIR$/dashboard/js/plugins/morris/morris.js" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\js\plugins\morris\morris.min.js" afterPath="$PROJECT_DIR$/dashboard/js/plugins/morris/morris.min.js" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\js\plugins\morris\raphael.min.js" afterPath="$PROJECT_DIR$/dashboard/js/plugins/morris/raphael.min.js" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\js\sb-admin-2.js" afterPath="$PROJECT_DIR$/dashboard/js/sb-admin-2.js" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\less\mixins.less" afterPath="$PROJECT_DIR$/dashboard/less/mixins.less" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\less\sb-admin-2.less" afterPath="$PROJECT_DIR$/dashboard/less/sb-admin-2.less" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\less\variables.less" afterPath="$PROJECT_DIR$/dashboard/less/variables.less" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\login.html" afterPath="$PROJECT_DIR$/dashboard/index.html" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\morris.html" afterPath="$PROJECT_DIR$/dashboard/morris.html" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\notifications.html" afterPath="$PROJECT_DIR$/dashboard/notifications.html" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\panels-wells.html" afterPath="$PROJECT_DIR$/dashboard/panels-wells.html" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\tables.html" afterPath="$PROJECT_DIR$/dashboard/tables.html" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\Administration\typography.html" afterPath="$PROJECT_DIR$/dashboard/typography.html" />
+      <change type="MOVED" beforePath="C:\Users\Massimo\PhpstormProjects\manga-reader\js\manga-1.0.3.js" afterPath="$PROJECT_DIR$/js/manga-1.0.4.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reader.php" afterPath="$PROJECT_DIR$/reader.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="manga-reader.iws" />
@@ -87,8 +172,9 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/reader.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/js/manga-1.0.3.js" />
+        <option value="$PROJECT_DIR$/reader.php" />
       </list>
     </option>
   </component>
@@ -134,7 +220,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -155,6 +240,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -201,15 +287,15 @@
       <BehatRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server" server_id="afb7d80e-4f9f-442e-87f5-5028a3433fad" server_name="EasyPHP">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
       <pass-parent-env-vars>false</pass-parent-env-vars>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server" server_id="afb7d80e-4f9f-442e-87f5-5028a3433fad" server_name="EasyPHP">
       <method />
     </configuration>
     <configuration default="false" name="composer.json" type="JavascriptDebugType" factoryName="JavaScript Debug" nameIsGenerated="true" uri="http://127.0.0.1/manga-reader/composer.json">
@@ -260,9 +346,11 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3344652" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.93877554" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44312394" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
@@ -271,17 +359,15 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293718" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="SvgViewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3282313" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.335034" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44427" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293718" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -549,13 +635,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/folders.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.206897" vertical-offset="334" max-vertical-offset="1078">
-          <caret line="26" column="79" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/hash.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.44444445" vertical-offset="2310" max-vertical-offset="3740">
@@ -605,24 +684,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/manga-1.0.3.js">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.4357142" vertical-offset="3620" max-vertical-offset="6226">
-          <caret line="128" column="9" selection-start-line="128" selection-start-column="9" selection-end-line="128" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.43137255" vertical-offset="0" max-vertical-offset="561">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.89017344" vertical-offset="462" max-vertical-offset="20768">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1936">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/folders.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.065671645" vertical-offset="550" max-vertical-offset="1100">
+          <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/manga-1.0.4.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45054945" vertical-offset="980" max-vertical-offset="6226">
+          <caret line="52" column="23" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/reader.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5096525" vertical-offset="6710" max-vertical-offset="8888">
-          <caret line="317" column="28" selection-start-line="317" selection-start-column="28" selection-end-line="317" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43137255" vertical-offset="0" max-vertical-offset="561">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state vertical-scroll-proportion="-3.167702" vertical-offset="2780" max-vertical-offset="9108">
+          <caret line="80" column="42" selection-start-line="80" selection-start-column="42" selection-end-line="80" selection-end-column="42" />
           <folding />
         </state>
       </provider>

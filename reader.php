@@ -78,8 +78,9 @@
     </div>
     <script type="text/javascript">
     	var mangaReader = {
-    		data: [],
-    		page: <?php echo $page; ?>,
+            DS: "<?php echo addslashes(DS); ?>",
+            data: [],
+            page: <?php echo $page; ?>,
             volume: <?php echo $volume; ?>,
             activeVolume: undefined
         }, flipbook = $('.manga');
@@ -90,6 +91,7 @@
             //document.webkitFullscreenEnabled;
 
         function createFlipbook() {
+            var ratio = $(window).width() / $(window).height();
             // Create the flipbook
             flipbook.turn({
                 // manga width
@@ -111,8 +113,7 @@
                 // The pages direction
                 direction: 'rtl',
                 // Display
-                display: (window.orientation && window.orientation === 90) || 
-                    typeof(window.orientation)==='undefined' ? "double" : "single",
+                //display: ratio<1.0 ? "single" : "double",
                 // Events
                 when: {
                     turning: function (event, page, view) {
@@ -128,7 +129,7 @@
                     turned: function (event, page, view) {
                         disableControls(page);
                         $(this).turn('center');
-                        if (page == 1) {
+                        if (page === 1) {
                             $(this).turn('peel', 'br');
                         }
                     },
@@ -259,7 +260,7 @@
                             var chapterPage = li.data('page'),
                                 volumeNo = li.data('volume');
                             $("#my-manga-menu").trigger("close.mm");
-                            if (mangaReader.activeVolume.info.volume!=volumeNo){
+                            if (mangaReader.activeVolume.info.volume!==volumeNo){
                                 mangaReader.volume = volumeNo;
                                 mangaReader.activeVolume = getVolume(mangaReader.volume);
                                 $('.manga').turn('destroy');
@@ -317,15 +318,18 @@
 	            });
 
 	            $(window).resize(function() {
+/*
+                    var ratio = $(window).width() / $(window).height();
+                    if (ratio<1.0) {
+                        // portrait
+                        $('.manga').turn("display", "single");
+                    } else {
+                        // landscape
+                        $('.manga').turn("display", "double");
+                    }
+*/
 	                resizeViewport();
 	            }).bind('orientationchange', function() {
-                        if(window.orientation === 90){
-                            $('#manga').turn("display", "double");
-                            //alert('this is landscape');
-                        } else {
-                            $('#manga').turn("display", "single");
-                            //alert('this is portrait');
-                        }
 	                resizeViewport();
 	            });
 
@@ -395,9 +399,8 @@
             test : Modernizr.csstransforms,
             yep: ['lib/turn.js'],
             nope: ['lib/turn.html4.min.js'],
-            both: ['lib/zoom.min.js', 'js/manga-1.0.3.js', 'extras/jquery.mmenu.min.all.js', 'extras/markdown.min.js',
-                'extras/orientationchange.min.js', 'css/manga-1.0.1.css', 'css/jquery.mmenu.all.css', 
-                'css/jquery.mmenu.themes.css'],
+            both: ['lib/zoom.min.js', 'js/manga-1.0.4.js', 'extras/jquery.mmenu.min.all.js', 'extras/markdown.min.js',
+                'css/manga-1.0.1.css', 'css/jquery.mmenu.all.css', 'css/jquery.mmenu.themes.css'],
             complete: loadApp
         });
 
