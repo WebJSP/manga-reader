@@ -8,8 +8,5 @@
             "name": "Massimo Perin",
             "email": "perin.massimo@gmail.com"
         }
-    ],
-    "require": {
-        "cakephp/cakephp": "2.5.5"
-    }
+    ]
 }
