@@ -1,7 +1,9 @@
 <?php
+        require_once('../config/config.inc.php');
 	require('../phplib/mlemos/http.php');
 	require('../phplib/mlemos/oauth_client.php');
-
+        session_start();
+        
 	$client = new oauth_client_class;
 	$client->debug = 1;
 	$client->debug_http = 1;
@@ -9,8 +11,8 @@
 	$client->redirect_uri = 'http://'.$_SERVER['HTTP_HOST'].
 		dirname(strtok($_SERVER['REQUEST_URI'],'?')).'/login_with_twitter.php';
 
-	$client->client_id = 'uwFVJG4r4STZg8kgI13JDXZTO'; $application_line = __LINE__;
-	$client->client_secret = 'dJvMmCwomGUbp19nwCTfVBJz3nAdCnt342mjuWwMpjg1BDdlsB';
+	$client->client_id = TWITTER_CONSUMER_KEY; $application_line = __LINE__;
+	$client->client_secret = TWITTER_CONSUMER_SECRET;
 
 	if(strlen($client->client_id) == 0 || strlen($client->client_secret) == 0)
             die('Please go to Twitter Apps page https://dev.twitter.com/apps/new , '.
@@ -40,15 +42,9 @@
             $_SESSION["id"] = $user->id;
             $_SESSION["name"] = $user->name;
             $_SESSION["screen_name"] = $user->screen_name;
-            header("Location: dashboard.html");
+            header("Location: dashboard.php");
 	} else {
-            unset($_SESSION["access_token"]);
-            unset($_SESSION["access_token_secret"]);
-            unset($_SESSION["client_id"]);
-            unset($_SESSION["client_secret"]);
-            unset($_SESSION["id"]);
-            unset($_SESSION["name"]);
-            unset($_SESSION["screen_name"]);
+            session_destroy();
             header("Location: ${$client->redirect_uri}");
 	}
 
