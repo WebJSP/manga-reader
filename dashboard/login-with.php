@@ -9,13 +9,15 @@ if(isset($_GET['provider'])) {
         $authProvider = $hybridauth->authenticate($provider);
         $user_profile = $authProvider->getUserProfile();
         if($user_profile && isset($user_profile->identifier)) {
-            echo "<b>Name</b> :".$user_profile->displayName."<br>";
-            echo "<b>Profile URL</b> :".$user_profile->profileURL."<br>";
-            echo "<b>Image</b> :".$user_profile->photoURL."<br> ";
-            echo "<img src='".$user_profile->photoURL."'/><br>";
-            echo "<b>Email</b> :".$user_profile->email."<br>";
-            echo "<br> <a href='logout.php'>Logout</a>";
-        }           
+            $_SESSION["admin_id"] = $user_profile->identifier;
+            $_SESSION["display_name"] = $user_profile->displayName;
+            $_SESSION["first_name"] = $user_profile->firstName;
+            $_SESSION["photo_url"] = $user_profile->photoURL;
+            header("Location: dashboard.php");
+        } else {
+            session_unset();
+            header("location: index.php?noauth=1");
+        }
     } catch( Exception $e ) { 
          switch( $e->getCode() ) {
                 case 0 : echo "Unspecified error."; break;

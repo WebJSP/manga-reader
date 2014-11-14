@@ -4,6 +4,7 @@ require_once('../config/config.inc.php');
 if (isset($_SESSION['email']) && $_SESSION['email']===ADMIN_EMAIL) {
     header("location: dashboard.php");
 } else {
+    $noauth = isset($_GET["noauth"]) ? $_GET["noauth"] : "0";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,22 +33,15 @@ if (isset($_SESSION['email']) && $_SESSION['email']===ADMIN_EMAIL) {
                             <i class="fa fa-twitter"></i>Sign in with Twitter
                         </a>
                     </div>
-                    <div class="col-md-4 text-center">
-                        <a class="btn btn-block btn-social btn-google-plus" 
-                            href="login-with.php?provider=Google">
-                            <i class="fa fa-google-plus"></i>Sign in with Google
-                        </a>
-                    </div>
-                    <div class="col-md-4 text-center">
-                        <a class="btn btn-block btn-social btn-facebook" 
-                            href="login-with.php?provider=Facebook">
-                            <i class="fa fa-facebook"></i>Sign in with Facebook
-                        </a>
-                    </div>
                 </div>
             </p>
         </div>
-        <p></p>
+        <?php if ($noauth==="1") {?>
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <strong>Warning!</strong> Your user doesn't have enough rights to access Dashboard.
+        </div>            
+        <?php } ?>
     </div>
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
