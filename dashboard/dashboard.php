@@ -1,13 +1,11 @@
 <?php
+session_start();
 require_once('../config/config.inc.php');
 
-//session_start();
-if (isset($_SESSION['id']) && $_SESSION['id']===ADMIN_USER_ID) {?>
+if (isset($_SESSION['email']) && $_SESSION['email']===ADMIN_EMAIL) {?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -943,7 +941,7 @@ if (isset($_SESSION['id']) && $_SESSION['id']===ADMIN_USER_ID) {?>
 </html>
 <?php 
 } else {
-    // Redirection to login page twitter or facebook
+    // Redirection to login page twitter, facebook or google
     header("location: index.php");
 }
 ?>
