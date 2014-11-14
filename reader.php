@@ -1,5 +1,5 @@
 <?php
-	define('DS', DIRECTORY_SEPARATOR);
+    define('DS', DIRECTORY_SEPARATOR);
     require 'phplib/UserAgentParser.php';
     $uaInfo = parse_user_agent();
     $browser = $uaInfo['browser'];

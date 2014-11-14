@@ -2,7 +2,7 @@
         require_once('../config/config.inc.php');
 	require('../phplib/mlemos/http.php');
 	require('../phplib/mlemos/oauth_client.php');
-        session_start();
+        //session_start();
         
 	$client = new oauth_client_class;
 	$client->debug = 1;
@@ -39,13 +39,11 @@
             $_SESSION["access_token_secret"] = $client->access_token_secret;
             $_SESSION["client_id"] = $client->client_id;
             $_SESSION["client_secret"] = $client->client_secret;
-            $_SESSION["id"] = $user->id;
+            $_SESSION["id"] = $user->id_str;
             $_SESSION["name"] = $user->name;
             $_SESSION["screen_name"] = $user->screen_name;
             header("Location: dashboard.php");
 	} else {
-            session_destroy();
-            header("Location: ${$client->redirect_uri}");
+            header("Location: logout.php");
 	}
 
-?>

@@ -1,3 +1,8 @@
+<?php
+require_once('../config/config.inc.php');
+
+//session_start();
+if (isset($_SESSION['id']) && $_SESSION['id']===ADMIN_USER_ID) {?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -936,3 +941,9 @@
 </body>
 
 </html>
+<?php 
+} else {
+    // Redirection to login page twitter or facebook
+    header("location: index.php");
+}
+?>
