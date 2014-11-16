@@ -10,3 +10,4 @@ example/*
 svg/[0123456789]*.svg
 .idea/*
 
+/AskFtpSiteDeployer.xml
