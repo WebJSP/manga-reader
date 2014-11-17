@@ -2,8 +2,8 @@
 session_start();
 include('../config/config.inc.php');
 include('../phplib/hybridauth/Hybrid/Auth.php');
-if(isset($_GET['provider'])) {
-    $provider = $_GET['provider'];
+$provider = filter_input(INPUT_GET, "provider");
+if(isset($provider)) {
     try{
         $hybridauth = new Hybrid_Auth( $config );
         $authProvider = $hybridauth->authenticate($provider);

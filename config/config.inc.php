@@ -1,11 +1,11 @@
 <?php 
     define('DS'                         , DIRECTORY_SEPARATOR);
-    define('APP_FOLDER'                 , '/manga-reader');
+    define('APP_FOLDER'                 , '/');
     define('MANGAS_FOLDER'              , 'mangas');
     $ADMIN_IDs = array( 2807710899 );
     $requestScheme = filter_input(INPUT_SERVER, "REQUEST_SCHEME");
     $httpHost = filter_input(INPUT_SERVER, "HTTP_HOST");
-    $config = array("base_url" => $requestScheme."://".$httpHost.APP_FOLDER."/phplib/hybridauth/index.php", 
+    $config = array("base_url" => $requestScheme."://".$httpHost.APP_FOLDER."phplib/hybridauth/index.php", 
         "providers" => array ( 
             "Twitter" => array ( 
                 "enabled" => true,
