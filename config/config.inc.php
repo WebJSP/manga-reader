@@ -1,9 +1,11 @@
 <?php 
     define('DS'                         , DIRECTORY_SEPARATOR);
-    define('ADMIN_ID'                   , 2807710899);
     define('APP_FOLDER'                 , '/manga-reader');
-
-    $config = array("base_url" => $_SERVER["REQUEST_SCHEME"]."://".$_SERVER['HTTP_HOST'].APP_FOLDER."/phplib/hybridauth/index.php", 
+    define('MANGAS_FOLDER'              , 'mangas');
+    $ADMIN_IDs = array( 2807710899 );
+    $requestScheme = filter_input(INPUT_SERVER, "REQUEST_SCHEME");
+    $httpHost = filter_input(INPUT_SERVER, "HTTP_HOST");
+    $config = array("base_url" => $requestScheme."://".$httpHost.APP_FOLDER."/phplib/hybridauth/index.php", 
         "providers" => array ( 
             "Twitter" => array ( 
                 "enabled" => true,
@@ -15,3 +17,16 @@
         "debug_mode" => false,
         "debug_file" => "debug.log"
     );    
+
+    function getFirstManga($dir) {
+        foreach (new DirectoryIterator($dir.DS.MANGAS_FOLDER) as $dirInfo) {
+            if ($dirInfo->isDot()) {
+                continue;
+            }
+            if (!$dirInfo->isDir()) {
+                continue;
+            }
+            return $dirInfo->getFilename();
+        }
+        return "";
+    }

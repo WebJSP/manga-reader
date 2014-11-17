@@ -2,8 +2,7 @@
 session_start();
 require_once('../config/config.inc.php');
 
-if (isset($_SESSION['admin_id']) && $_SESSION['admin_id']===ADMIN_ID) {
-    
+if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs)) {
     $firstName = $_SESSION["first_name"];
     $screenName = $_SESSION["display_name"];
     $photoUrl = $_SESSION["photo_url"];
@@ -20,22 +19,16 @@ if (isset($_SESSION['admin_id']) && $_SESSION['admin_id']===ADMIN_ID) {
     <title>Manga Reader Dashboard</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
-
-    <!-- Timeline CSS -->
-    <link href="css/plugins/timeline.css" rel="stylesheet">
+    <link href="../assets/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/sb-admin-2.css" rel="stylesheet">
-
-    <!-- Morris Charts CSS -->
-    <link href="css/plugins/morris.css" rel="stylesheet">
+    <link href="../assets/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../assets/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -162,7 +155,7 @@ if (isset($_SESSION['admin_id']) && $_SESSION['admin_id']===ADMIN_ID) {
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="table-responsive">
-                                <div class="center">
+                                <div class="col-lg-12 text-center">
                                     <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Loading...
                                 </div>
                                 <!-- ajax generated table -->
@@ -280,7 +273,7 @@ if (isset($_SESSION['admin_id']) && $_SESSION['admin_id']===ADMIN_ID) {
     <script src="js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
     <script src="js/plugins/metisMenu/metisMenu.min.js"></script>

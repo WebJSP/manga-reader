@@ -1,5 +1,5 @@
 <?php
-    define('DS', DIRECTORY_SEPARATOR);
+    require_once './config/config.inc.php';
     require 'phplib/UserAgentParser.php';
     $uaInfo = parse_user_agent();
     $browser = $uaInfo['browser'];
@@ -8,13 +8,19 @@
         $version = \intval($version);
     }
     $folder = filter_input(INPUT_GET, "manga");
+    if (!isset($folder)) {
+        $folder = getFirstManga(__DIR__);
+    }
     $volume = filter_input(INPUT_GET, "vol");
+    if (!isset($volume) || strlen($volume)==0) {
+        $volume = 1;
+    }
     $page = filter_input(INPUT_GET, "page");
     if (!isset($page)) {
         $page = 1;
     }
-    if (file_exists($folder.DS."title.txt")) {
-        $mangaTitle = utf8_encode(file_get_contents($folder.DS."title.txt"));
+    if (file_exists(MANGAS_FOLDER.DS.$folder.DS."title.txt")) {
+        $mangaTitle = utf8_encode(file_get_contents(MANGAS_FOLDER.DS.$folder.DS."title.txt"));
     } else {
         $mangaTitle = $folder;
     }
@@ -91,7 +97,7 @@
             //document.webkitFullscreenEnabled;
 
         function createFlipbook() {
-            var ratio = $(window).width() / $(window).height();
+            //var ratio = $(window).width() / $(window).height();
             // Create the flipbook
             flipbook.turn({
                 // manga width
@@ -209,7 +215,7 @@
             }
 
             $.post('php/folders.php', {
-            	folder: '<?php echo $folder; ?>'
+            	folder: '<?php echo MANGAS_FOLDER.DS.$folder; ?>'
             }, function(data) {
             	mangaReader.data = data;
                 // build the menu
@@ -222,7 +228,7 @@
                     var menuRow =
                         '<li class="img">'+
                             '<a href="#">'+
-                                '<img src="<?php echo $folder;?>/volume'+volumeNo+'.jpg" />'+
+                                '<img src="<?php echo MANGAS_FOLDER."/".$folder;?>/volume'+volumeNo+'.jpg" />'+
                                 volumeName+'<br/>'+
                                 '<small>'+description+'</small>'+
                             '</a>'+

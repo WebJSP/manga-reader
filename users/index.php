@@ -4,8 +4,6 @@ require_once('../config/config.inc.php');
 if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs)) {
     header("location: dashboard.php");
 } else {
-    $filteredNoAuth = filter_input(INPUT_GET, "noauth");
-    $noauth = isset($filteredNoAuth) ? $filteredNoAuth : "0";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,12 +35,6 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
                 </div>
             </p>
         </div>
-        <?php if ($noauth==="1") {?>
-        <div class="alert alert-danger alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <strong>Warning!</strong> Your user doesn't have enough rights to access Dashboard.
-        </div>            
-        <?php } ?>
     </div>
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
