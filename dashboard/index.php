@@ -26,8 +26,15 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
 <body>
     <div class="container">
         <div class="jumbotron">
-            <h1 class="text-center">Manga Reader Dashboard</h1>
-            <p class="text-center">Please select an account to access the dashboard.<br></p>
+            <div class="row">
+                <div class="col-md-2 text-center">
+                    <img src="../pics/manga-reader.jpg" class="img img-responsive img-thumbnail">
+                </div>
+                <div class="col-md-10 text-center">
+                    <h1 class="text-center">Manga Reader Dashboard</h1>
+                    <p class="text-center">Please select an account to access the dashboard.<br></p>
+                </div>
+            </div>
             <p>
                 <div class="row">
                     <div class="col-md-4 text-center">

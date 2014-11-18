@@ -7,3 +7,4 @@ Disallow: /users/
 Disallow: /phplib/
 Disallow: /lib/
 Disallow: /php/
+Disallow: /crossdomain.xml
