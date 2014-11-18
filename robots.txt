@@ -1,3 +1,9 @@
-# robotstxt.org/
-
 User-agent: *
+Disallow: /dashboard/
+Disallow: /config/
+Disallow: /mangas/
+Disallow: /vendor/
+Disallow: /users/
+Disallow: /phplib/
+Disallow: /lib/
+Disallow: /php/
