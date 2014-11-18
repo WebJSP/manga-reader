@@ -22,8 +22,6 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-    <script src="../assets/js/sweet-alert.js"></script>
-    <link href="../assets/css/sweet-alert.css" rel="stylesheet" >
 </head>
 <body>
     <div class="container">
@@ -43,16 +41,21 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
         </div>
         <?php if ($noauth==="1") {?>
         <script type="text/javascript">
-            swal({
-                title: "Warning!",
-                text: "Your user doesn't have enough rights to access Dashboard!",
-                type: "error",
-                confirmButtonClass: 'btn-danger',
-                confirmButtonText: 'Ok'
+            $(document).ready(function(){
+                sweetAlertInitialize();
+                sweetAlert({
+                    title: "Warning!",
+                    text: "You doesn't have enough rights to access Dashboard!",
+                    type: "error",
+                    confirmButtonClass: 'btn-danger',
+                    confirmButtonText: 'Ok'
+                });
             });
         </script>
         <?php } ?>
     </div>
+    <script src="../assets/js/sweet-alert.min.js"></script>
+    <link href="../assets/css/sweet-alert.css" rel="stylesheet" >
 </body>
 </html>
 <?php
