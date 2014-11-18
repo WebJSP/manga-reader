@@ -16,7 +16,8 @@
         "edit-manga": "Modifica Manga"
     },
     "dashboard/index.php": {
-        "title": "Manga Reader<br/><small>Pannello di Controllo</small>",
+        "title": "Manga Reader - Pannello di Controllo",
+        "page-header": "Manga Reader<br/><small>Pannello di Controllo</small>",
         "select-account": "Selezionate un profilo per accedere al pannello di controllo.",
         "sign-in-twitter": "Entrate con Twitter",
         "alert-title": "Attenzione!",

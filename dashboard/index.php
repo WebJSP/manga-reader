@@ -31,7 +31,7 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
                     <img src="../pics/manga-reader.jpg" class="img img-responsive img-thumbnail">
                 </div>
                 <div class="col-md-10 text-center">
-                    <h1 class="text-center"><?=$phrases["dashboard/index.php"]["title"]?></h1>
+                    <h1 class="text-center"><?=$phrases["dashboard/index.php"]["page-header"]?></h1>
                     <p class="text-center"><?=$phrases["dashboard/index.php"]["select-account"]?><br></p>
                 </div>
             </div>
