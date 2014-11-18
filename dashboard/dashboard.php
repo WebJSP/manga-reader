@@ -49,7 +49,7 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <img src="../pics/manga-reader.svgz" style="height: 40px;float: left;">
+                <img src="../assets/pics/manga-reader.svgz" style="height: 40px;float: left;">
                 <a class="navbar-brand" href="dashboard.php"><?=$phrases["dashboard/dashboard.php"]["navbar-brand"]?></a>
             </div>
             <!-- /.navbar-header -->

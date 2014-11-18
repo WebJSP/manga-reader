@@ -28,7 +28,7 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
         <div class="jumbotron">
             <div class="row">
                 <div class="col-md-2 text-center">
-                    <img src="../pics/manga-reader.svgz" class="img img-responsive img-thumbnail">
+                    <img src="../assets/pics/manga-reader.svgz" class="img img-responsive img-thumbnail">
                 </div>
                 <div class="col-md-10 text-center">
                     <h1 class="text-center"><?=$phrases["dashboard/index.php"]["page-header"]?></h1>
