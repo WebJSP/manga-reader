@@ -19,6 +19,11 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
     <!-- Custom Fonts -->
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="../assets/css/bootstrap-social.css" rel="stylesheet" >
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="../assets/js/sweet-alert.js"></script>
+    <link href="../assets/css/sweet-alert.css" rel="stylesheet" >
 </head>
 <body>
     <div class="container">
@@ -37,15 +42,17 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
             </p>
         </div>
         <?php if ($noauth==="1") {?>
-        <div class="alert alert-danger alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <strong>Warning!</strong> Your user doesn't have enough rights to access Dashboard.
-        </div>            
+        <script type="text/javascript">
+            swal({
+                title: "Warning!",
+                text: "Your user doesn't have enough rights to access Dashboard!",
+                type: "error",
+                confirmButtonClass: 'btn-danger',
+                confirmButtonText: 'Ok'
+            });
+        </script>
         <?php } ?>
     </div>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
 <?php
