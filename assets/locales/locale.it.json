@@ -1,0 +1,25 @@
+{
+    "dashboard/dashboard.php": {
+        "title": "Manga Reader - Pannello di Controllo",
+        "navbar-brand": "MANGA READER",
+        "account": "Profilo",
+        "sign-out": "Sign Out",
+        "search": "Ricerca...",
+        "create": "Crea Manga",
+        "remove": "Cancella Manga",
+        "edit": "Modifica Manga",
+        "dashboard": "Dashboard",
+        "manga-list": "Elenco Manga",
+        "loading": "Caricamento in corso...",
+        "notifications": "Notifiche",
+        "manga-creation": "Creazione Manga",
+        "edit-manga": "Modifica Manga"
+    },
+    "dashboard/index.php": {
+        "title": "Manga Reader - Pannello di Controllo",
+        "select-account": "Selezionate un profilo per accedere alpannello di controllo.",
+        "sign-in-twitter": "Entrate con Twitter",
+        "alert-title": "Attenzione!",
+        "no-access": "Non hai i permessi per accedere al pannello di controllo!"
+    }
+}
