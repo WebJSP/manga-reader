@@ -36,14 +36,14 @@
         echo ' class="ie9"'; 
     }?>>
 <head>
-    <title>Manga Reader</title>
+    <title><?=$phrases["reader.php"]["title"]?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="extras/modernizr.2.8.3.min.js"></script>
-    <script type="text/javascript" src="lib/hash.js"></script>
+    <script type="text/javascript" src="assets/extras/modernizr.2.8.3.min.js"></script>
+    <script type="text/javascript" src="assets/lib/hash.js"></script>
     <style type="text/css">
         .mm-menu li.img:after
         {
@@ -175,7 +175,7 @@
                         if (!window.escTip && !$.isTouch) {
                             escTip = true;
                             $('<div />', {'class': 'exit-message'}).
-                                html('<div>Press ESC to exit</div>').
+                                html('<div><?=$phrases["reader.php"]["esc-tip"]?></div>').
                                 appendTo($('body')).
                                 delay(2000).
                                 animate({opacity:0}, 500, function() {
@@ -403,10 +403,10 @@
         // Load the HTML4 version if there's not CSS transform
         yepnope({
             test : Modernizr.csstransforms,
-            yep: ['lib/turn.js'],
-            nope: ['lib/turn.html4.min.js'],
-            both: ['lib/zoom.min.js', 'js/manga-1.0.4.js', 'extras/jquery.mmenu.min.all.js', 'extras/markdown.min.js',
-                'css/manga-1.0.1.css', 'css/jquery.mmenu.all.css', 'css/jquery.mmenu.themes.css'],
+            yep: ['assets/lib/turn.js'],
+            nope: ['assets/lib/turn.html4.min.js'],
+            both: ['assets/lib/zoom.min.js', 'assets/js/manga-1.0.4.js', 'assets/extras/jquery.mmenu.min.all.js', 'assets/extras/markdown.min.js',
+                'assets/css/manga-1.0.1.css', 'assets/css/jquery.mmenu.all.css', 'assets/css/jquery.mmenu.themes.css'],
             complete: loadApp
         });
 

@@ -16,7 +16,7 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
     <meta name="description" content="">
     <meta name="author" content="perin.massimo@gmail.com">
 
-    <title>Manga Reader Dashboard</title>
+    <title><?=$phrases["dashboard/dashboard.php"]["title"]?></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
@@ -49,14 +49,15 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="dashboard.php">MANGA READER</a>
+                <img src="../pics/manga-reader.svgz" style="height: 40px;float: left;">
+                <a class="navbar-brand" href="dashboard.php"><?=$phrases["dashboard/dashboard.php"]["navbar-brand"]?></a>
             </div>
             <!-- /.navbar-header -->
             
             <ul class="nav navbar-top-links navbar-right">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="fa fa-gear fa-fw"></i> Account
+                        <i class="fa fa-gear fa-fw"></i> <?=$phrases["dashboard/dashboard.php"]["account"]?>
                     </a>
                     <ul class="dropdown-menu">
                         <li>
@@ -78,7 +79,7 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
                                         </div>
                                         <div class="col-md-6">
                                             <a href="logout.php" class="btn btn-default btn-sm pull-right">
-                                                <i class="fa fa-sign-out fa-fw"></i> Sign Out
+                                                <i class="fa fa-sign-out fa-fw"></i> <?=$phrases["dashboard/dashboard.php"]["sign-out"]?>
                                             </a>
                                         </div>
                                     </div>
@@ -96,7 +97,7 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
                             <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
+                                <input type="text" class="form-control" placeholder="<?=$phrases["dashboard/dashboard.php"]["search"]?>">
                                 <span class="input-group-btn">
                                 <button class="btn btn-default" type="button">
                                     <i class="fa fa-search"></i>
@@ -106,13 +107,13 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="#create"><i class="fa fa-file-o fa-fw"></i> Create Manga</a>
+                            <a href="#create"><i class="fa fa-file-o fa-fw"></i> <?=$phrases["dashboard/dashboard.php"]["create"]?></a>
                         </li>
                         <li>
-                            <a href="#remove"><i class="fa fa-trash-o fa-fw"></i> Remove Manga</a>
+                            <a href="#remove"><i class="fa fa-trash-o fa-fw"></i> <?=$phrases["dashboard/dashboard.php"]["remove"]?></a>
                         </li>
                         <li>
-                            <a href="#edit"><i class="fa fa-edit fa-fw"></i> Edit Manga</a>
+                            <a href="#edit"><i class="fa fa-edit fa-fw"></i> <?=$phrases["dashboard/dashboard.php"]["edit"]?></a>
                         </li>
                     </ul>
                 </div>
@@ -124,7 +125,7 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Dashboard</h1>
+                    <h1 class="page-header"><?=$phrases["dashboard/dashboard.php"]["dashboard"]?></h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -133,13 +134,13 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
                 <div class="col-lg-8">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-list fa-fw"></i> Manga List
+                            <i class="fa fa-list fa-fw"></i> <?=$phrases["dashboard/dashboard.php"]["manga-list"]?>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <div class="col-lg-12 text-center">
-                                    <i class="fa fa-circle-o-notch fa-spin"></i> Loading...
+                                    <i class="fa fa-circle-o-notch fa-spin"></i> <?=$phrases["dashboard/dashboard.php"]["loading"]?>
                                 </div>
                                 <!-- ajax generated table -->
                             </div>
@@ -153,7 +154,7 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
                 <div class="col-lg-4">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-bell fa-fw"></i> Notifications Panel
+                            <i class="fa fa-bell fa-fw"></i> <?=$phrases["dashboard/dashboard.php"]["notifications"]?>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -172,7 +173,7 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
                                 </a>
                             </div>
                             <!-- /.list-group -->
-                            <a href="#" class="btn btn-default btn-block">View All Alerts</a>
+                            <a href="#" class="btn btn-default btn-block"><?=$phrases["dashboard/dashboard.php"]["view-all-alerts"]?></a>
                         </div>
                         <!-- /.panel-body -->
                     </div>
@@ -185,7 +186,7 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-file-o fa-fw"></i> Manga Creation
+                            <i class="fa fa-file-o fa-fw"></i> <?=$phrases["dashboard/dashboard.php"]["manga-creation"]?>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -201,7 +202,7 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-edit fa-fw"></i> Manga Editing
+                            <i class="fa fa-edit fa-fw"></i> <?=$phrases["dashboard/dashboard.php"]["edit-manga"]?>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">

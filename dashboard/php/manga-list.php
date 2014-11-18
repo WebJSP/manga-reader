@@ -7,9 +7,9 @@ error_reporting(0);
     <thead>
         <tr>
             <th>#</th>
-            <th>Title</th>
-            <th>Folder</th>
-            <th>Creation</th>
+            <th><?=$phrases["dashboard/php/manga-list.php"]["title"]?></th>
+            <th><?=$phrases["dashboard/php/manga-list.php"]["folder"]?></th>
+            <th><?=$phrases["dashboard/php/manga-list.php"]["creation"]?></th>
         </tr>
     </thead>
     <tbody>

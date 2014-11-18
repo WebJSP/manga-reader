@@ -1,4 +1,8 @@
 {
+    "reader.php": {
+        "title": "Manga Reader",
+        "esc-tip": "Press ESC to exit"
+    },
     "dashboard/dashboard.php": {
         "title": "Manga Reader Dashboard",
         "navbar-brand": "MANGA READER",
@@ -13,7 +17,8 @@
         "loading": "Loading...",
         "notifications": "Notifications Panel",
         "manga-creation": "Manga Creation",
-        "edit-manga": "Manga Editing"
+        "edit-manga": "Manga Editing",
+        "view-all-alerts": "View All Alerts"
     },
     "dashboard/index.php": {
         "title": "Manga Reader Dashboard",
@@ -22,5 +27,10 @@
         "sign-in-twitter": "Sign in with Twitter",
         "alert-title": "Warning!",
         "no-access": "You doesn't have enough rights to access Dashboard!"
+    },
+    "dashboard/php/manga-list.php": {
+        "title": "Title",
+        "folder": "Folder",
+        "creation": "Creation"
     }
 }
