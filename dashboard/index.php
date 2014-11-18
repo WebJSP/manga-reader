@@ -11,7 +11,7 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Manga Reader Dashboard</title>
+    <title><?=$phrases["dashboard/index.php"]["title"]?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="perin.massimo@gmail.com">
@@ -31,8 +31,8 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
                     <img src="../pics/manga-reader.jpg" class="img img-responsive img-thumbnail">
                 </div>
                 <div class="col-md-10 text-center">
-                    <h1 class="text-center">Manga Reader Dashboard</h1>
-                    <p class="text-center">Please select an account to access the dashboard.<br></p>
+                    <h1 class="text-center"><?=$phrases["dashboard/index.php"]["title"]?></h1>
+                    <p class="text-center"><?=$phrases["dashboard/index.php"]["select-account"]?><br></p>
                 </div>
             </div>
             <p>
@@ -40,7 +40,7 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
                     <div class="col-md-4 text-center">
                         <a class="btn btn-block btn-social btn-twitter" 
                             href="login-with.php?provider=Twitter">
-                            <i class="fa fa-twitter"></i>Sign in with Twitter
+                            <i class="fa fa-twitter"></i><?=$phrases["dashboard/index.php"]["sign-in-twitter"]?>
                         </a>
                     </div>
                 </div>
@@ -51,8 +51,8 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
             $(document).ready(function(){
                 sweetAlertInitialize();
                 sweetAlert({
-                    title: "Warning!",
-                    text: "You doesn't have enough rights to access Dashboard!",
+                    title: "<?=$phrases["dashboard/index.php"]["alert-title"]?>",
+                    text: "<?=$phrases["dashboard/index.php"]["no-access"]?>",
                     type: "error",
                     confirmButtonClass: 'btn-danger',
                     confirmButtonText: 'Ok'

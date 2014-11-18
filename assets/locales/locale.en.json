@@ -16,7 +16,7 @@
         "edit-manga": "Manga Editing"
     },
     "dashboard/index.php": {
-        "title": "Manga Reader Dashboard",
+        "title": "Manga Reader<br/><small>Dashboard</small>",
         "select-account": "Please select an account to access the dashboard.",
         "sign-in-twitter": "Sign in with Twitter",
         "alert-title": "Warning!",
