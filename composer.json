@@ -1,12 +1,13 @@
 {
-    "name": "mperin/manga-reader",
-    "description": "description_text",
-    "minimum-stability": "stable",
-    "license": "GPL 3.0",
+    "name": "vendor/manga-reader",
+    "description": "Description of project manga-reader.",
     "authors": [
         {
-            "name": "Massimo Perin",
+            "name": "mperin",
             "email": "perin.massimo@gmail.com"
         }
-    ]
+    ],
+    "require": {
+        "garoevans/php-enum": "1.2.0"
+    }
 }

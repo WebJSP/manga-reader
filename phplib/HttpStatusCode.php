@@ -5,7 +5,7 @@
  *
  * @author Massimo
  */
-class HttpStatusCode {
+class HttpStatusCode extends Garoevans\PhpEnum\Enum {
     const __default = self::OK;
     
     const SWITCHING_PROTOCOLS = 101;

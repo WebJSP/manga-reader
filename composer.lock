@@ -1,0 +1,65 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "76016f476657a78754a1e7aa4453e9ac",
+    "packages": [
+        {
+            "name": "garoevans/php-enum",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/garoevans/php-enum.git",
+                "reference": "ef76bbc711bf52f63556fb91904cea0d762343c4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/garoevans/php-enum/zipball/ef76bbc711bf52f63556fb91904cea0d762343c4",
+                "reference": "ef76bbc711bf52f63556fb91904cea0d762343c4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Garoevans\\PhpEnum\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gareth Evans",
+                    "email": "garoevans@gmail.com",
+                    "role": "developer"
+                }
+            ],
+            "description": "Convenient way to always have an Enum object available and utilise Spl Types if available.",
+            "homepage": "https://github.com/garoevans/php-enum",
+            "keywords": [
+                "enum",
+                "enumeration",
+                "php",
+                "splenum",
+                "type"
+            ],
+            "time": "2014-10-09 22:41:24"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "platform": [],
+    "platform-dev": []
+}
