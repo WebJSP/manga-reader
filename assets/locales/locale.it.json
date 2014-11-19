@@ -4,6 +4,11 @@
         "esc-tip": "Premi ESC per uscire"
     },
     "dashboard/dashboard.php": {
+        "manga-title-label": "Titolo",
+        "manga-name-label": "Nome",
+        "manga-name-placeholder": "(Sar&agrave; usato come nome cartella.)",
+        "submit-button": "Salva",
+        "reset-button": "Azzera",
         "title": "Manga Reader - Pannello di Controllo",
         "navbar-brand": "MANGA READER",
         "account": "Profilo",

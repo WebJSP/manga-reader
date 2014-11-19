@@ -26,6 +26,7 @@ $(function() {
         }
         
         $('#side-menu a[href="#create"]').on("click", createManga);
+        $('#create-manga-submit').on("click", createMangaSubmit);
         $('#side-menu a[href="#remove"]').on("click", removeManga);
         $('#side-menu a[href="#edit"]').on("click", editManga);
     });
@@ -35,6 +36,23 @@ function createManga(event) {
     $("#manga-list").addClass("hidden");
     $("#create-manga").removeClass("hidden");
     $("#edit-manga").addClass("hidden");
+    event.preventDefault();
+}
+
+function createMangaSubmit(event) {
+    $.ajax("php/create-manga.php", {
+        method: "post",
+        data: $("#create-manga-form").serialize()
+    }).done(function(data, textStatus, jqXHR){
+        $("#create-manga").addClass("hidden");
+        $("#edit-manga").removeClass("hidden");
+    }).fail(function(data, textStatus, jqXHR){
+        $("#manga-list").removeClass("hidden");
+        $("#create-manga").addClass("hidden");
+        $("#edit-manga").addClass("hidden");
+    }).always(function(){
+        $("#create-manga-form input").val("");
+    });
     event.preventDefault();
 }
 

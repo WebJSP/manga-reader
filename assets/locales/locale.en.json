@@ -4,6 +4,11 @@
         "esc-tip": "Press ESC to exit"
     },
     "dashboard/dashboard.php": {
+        "manga-title-label": "Title",
+        "manga-name-label": "Name",
+        "manga-name-placeholder": "Enter text (will be used as folder name)",
+        "submit-button": "Ok",
+        "reset-button": "Reset Fields",
         "title": "Manga Reader Dashboard",
         "navbar-brand": "MANGA READER",
         "account": "Account",

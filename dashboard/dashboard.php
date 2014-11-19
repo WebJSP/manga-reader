@@ -190,6 +190,32 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
+                            <form role="form" id="create-manga-form">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label><?=$phrases["dashboard/dashboard.php"]["manga-name-label"]?></label>
+                                            <input class="form-control" 
+                                                placeholder="<?=$phrases["dashboard/dashboard.php"]["manga-name-placeholder"]?>" 
+                                                name="manga-name">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="form-group">
+                                            <label><?=$phrases["dashboard/dashboard.php"]["manga-title-label"]?></label>
+                                            <input class="form-control" name="manga-title">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.row -->
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <button type="button" class="btn btn-default" id="create-manga-submit"><?=$phrases["dashboard/dashboard.php"]["submit-button"]?></button>
+                                        <button type="reset" class="btn btn-default"><?=$phrases["dashboard/dashboard.php"]["reset-button"]?></button>
+                                    </div>
+                                </div>
+                                <!-- /.row -->
+                            </form>                                
                         </div>
                         <!-- /.panel-body -->
                     </div>
@@ -230,7 +256,7 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
     <script src="js/plugins/metisMenu/metisMenu.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="js/dashboard.js"></script>
+    <script src="js/dashboard.js?lu=<?=filectime("js".DS."dashboard.js")?>"></script>
     <script type="text/javascript">
         $(document).ready(function(){
            $('#manga-list div.table-responsive').load('php/manga-list.php'); 
