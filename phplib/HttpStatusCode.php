@@ -1,11 +1,11 @@
 <?php
-
+//use Garoevans\PhpEnum\Enum;
 /**
  * Description of HttpStatusCode
  *
  * @author Massimo
  */
-class HttpStatusCode extends Garoevans\PhpEnum\Enum {
+class HttpStatusCode /*extends Enum */{
     const __default = self::OK;
     
     const SWITCHING_PROTOCOLS = 101;

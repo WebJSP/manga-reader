@@ -24,7 +24,7 @@
         if (!file_exists($fileName)) {
             $fileName = dirname(__DIR__).DS."assets".DS."locales".DS."locale.en.json";
         }
-        return json_decode(utf8_encode(file_get_contents($fileName)), true);
+        return json_decode(file_get_contents($fileName), true);
     }
     
     function getFirstManga($dir) {

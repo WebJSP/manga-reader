@@ -37,5 +37,17 @@
         "title": "Titolo",
         "folder": "Cartella",
         "creation": "Ultima Modifica"
+    },
+    "dashboard/php/create-manga.php": {
+        "alert-title": "Attenzione!",
+        "no-access": "Non hai i permessi per accedere al pannello di controllo!",
+        "folder-exists": "La Cartella è già esistente!"
+    },
+    "dashboard/php/delete-manga.php": {
+        "alert-title": "Sei sicuro?",
+        "yes-button": "Si, cancellalo!",
+        "cancel-button": "Annulla",
+        "no-access": "Non hai i permessi per accedere al pannello di controllo!",
+        "warning-message": "Non potrai recuperare questi file!"
     }
 }

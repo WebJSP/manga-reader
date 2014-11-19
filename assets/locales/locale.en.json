@@ -37,5 +37,17 @@
         "title": "Title",
         "folder": "Folder",
         "creation": "Creation"
+    },
+    "dashboard/php/create-manga.php": {
+        "alert-title": "Warning!",
+        "no-access": "You doesn't have enough rights to access Dashboard!",
+        "folder-exists": "The folder already exists!"
+    },
+    "dashboard/php/delete-manga.php": {
+        "alert-title": "Are you sure?",
+        "yes-button": "Yes, delete it!",
+        "cancel-button": "Cancel",
+        "no-access": "You doesn't have enough rights to access Dashboard!",
+        "warning-message": "You will not be able to recover this file!"
     }
 }

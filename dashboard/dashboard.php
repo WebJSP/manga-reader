@@ -255,12 +255,74 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
     <!-- Metis Menu Plugin JavaScript -->
     <script src="js/plugins/metisMenu/metisMenu.min.js"></script>
 
+    <script src="../assets/js/sweet-alert.min.js"></script>
+    <link href="../assets/css/sweet-alert.css" rel="stylesheet" >
     <!-- Custom Theme JavaScript -->
     <script src="js/dashboard.js?lu=<?=filectime("js".DS."dashboard.js")?>"></script>
     <script type="text/javascript">
         $(document).ready(function(){
-           $('#manga-list div.table-responsive').load('php/manga-list.php'); 
+            sweetAlertInitialize();
+            $('#manga-list div.table-responsive').load('php/manga-list.php'); 
         });
+        
+        function showNotLoggedAlert() {
+            sweetAlert({
+                title: "<?=$phrases["dashboard/php/create-manga.php"]["alert-title"]?>",
+                text: "<?=$phrases["dashboard/php/create-manga.php"]["no-access"]?>",
+                type: "error",
+                confirmButtonClass: 'btn-danger',
+                confirmButtonText: 'Ok'
+            });
+        };
+        
+        function showExistingFolderAlert() {
+            sweetAlert({
+                title: "<?=$phrases["dashboard/php/create-manga.php"]["alert-title"]?>",
+                text: "<?=$phrases["dashboard/php/create-manga.php"]["folder-exists"]?>",
+                type: "error",
+                confirmButtonClass: 'btn-danger',
+                confirmButtonText: 'Ok'
+            });
+        };
+        
+        function removeManga(event) {
+            var selectedRadio = $('input[name=folder]:radio').filter(":checked");
+            if (selectedRadio.length>0) {
+                sweetAlert({
+                    title: "<?=$phrases["dashboard/php/delete-manga.php"]["alert-title"]?>", 
+                    text: "<?=$phrases["dashboard/php/delete-manga.php"]["warning-message"]?>", 
+                    type: "warning", 
+                    showCancelButton: true, 
+                    cancelButtonText: "<?=$phrases["dashboard/php/delete-manga.php"]["cancel-button"]?>",
+                    confirmButtonColor: "#DD6B55", 
+                    confirmButtonText: "<?=$phrases["dashboard/php/delete-manga.php"]["yes-button"]?>"/*, 
+                    closeOnConfirm: false*/
+                }, function () {
+                    $.ajax("php/delete-manga.php", {
+                        method: "post",
+                        data: {
+                            name: selectedRadio.val()
+                        },
+                        cache: false,
+                        statusCode: {
+                            "403": showNotLoggedAlert
+                        }
+                    }).done(function(data, textStatus, jqXHR){
+                        if (!data.success) {
+                            sweetAlert({
+                                text: data.error, 
+                                type: "error", 
+                                confirmButtonColor: "#DD6B55", 
+                                confirmButtonText: "<?=$phrases["dashboard/php/delete-manga.php"]["yes-button"]?>"
+                            });
+                        }
+                    }).always(function(){
+                        $('#manga-list div.table-responsive').load('php/manga-list.php'); 
+                    });
+                });
+            }
+            event.preventDefault();
+        }
     </script>
 </body>
 
