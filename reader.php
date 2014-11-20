@@ -24,6 +24,8 @@
     } else {
         $mangaTitle = $folder;
     }
+    $mangaJs = filectime("assets".DS."js".DS."manga.js");
+    $mangaCss = filectime("assets".DS."css".DS."manga.css");
 ?><!doctype html>
 <html lang="en"<?php 
     if($browser=='MSIE' && $version<7) {  
@@ -42,8 +44,8 @@
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="assets/extras/modernizr.2.8.3.min.js"></script>
-    <script type="text/javascript" src="assets/lib/hash.js"></script>
+    <script type="text/javascript" src="assets/js/modernizr.2.8.3.min.js"></script>
+    <script type="text/javascript" src="assets/js/hash.js"></script>
     <style type="text/css">
         .mm-menu li.img:after
         {
@@ -64,6 +66,8 @@
         }
     </style>
 
+    <script src="../assets/js/sweet-alert/sweet-alert.min.js"></script>
+    <link href="../assets/css/sweet-alert/sweet-alert.css" rel="stylesheet" >
 </head>
 <body>
     <div id="canvas">
@@ -285,45 +289,45 @@
                 mangaReader.activeVolume = getVolume(mangaReader.volume);
                 createFlipbook();
 
-	            // Using arrow keys to turn the page
-	            $(document).keydown(function(e){
-	                var previous = 39, next = 37, esc = 27;
+                // Using arrow keys to turn the page
+                $(document).keydown(function(e){
+                    var previous = 39, next = 37, esc = 27;
 
-	                switch (e.keyCode) {
-	                    case previous:
-	                        // left arrow
-	                        $('.manga').turn('previous');
-	                        e.preventDefault();
-	                    break;
-	                    case next:
-	                        //right arrow
-	                        $('.manga').turn('next');
-	                        e.preventDefault();
-	                    break;
-	                    case esc:
-	                        $('.manga-viewport').zoom('zoomOut');
-	                        e.preventDefault();
-	                    break;
-	                }
-	            });
+                    switch (e.keyCode) {
+                        case previous:
+                            // left arrow
+                            $('.manga').turn('previous');
+                            e.preventDefault();
+                        break;
+                        case next:
+                            //right arrow
+                            $('.manga').turn('next');
+                            e.preventDefault();
+                        break;
+                        case esc:
+                            $('.manga-viewport').zoom('zoomOut');
+                            e.preventDefault();
+                        break;
+                    }
+                });
 
-	            // URIs - Format #/page/1
+                // URIs - Format #/page/1
 
-	            Hash.on('^page\/([0-9]*)$', {
-	                yep: function(path, parts) {
-	                    var page = parts[1];
-	                    if (page!==undefined) {
-	                        if ($('.manga').turn('is'))
-	                            $('.manga').turn('page', page);
-	                    }
-	                },
-	                nop: function(path) {
-	                    if ($('.manga').turn('is'))
-	                        $('.manga').turn('page', mangaReader.page /*1*/);
-	                }
-	            });
+                Hash.on('^page\/([0-9]*)$', {
+                    yep: function(path, parts) {
+                        var page = parts[1];
+                        if (page!==undefined) {
+                            if ($('.manga').turn('is'))
+                                $('.manga').turn('page', page);
+                        }
+                    },
+                    nop: function(path) {
+                        if ($('.manga').turn('is'))
+                            $('.manga').turn('page', mangaReader.page /*1*/);
+                    }
+                });
 
-	            $(window).resize(function() {
+                $(window).resize(function() {
 /*
                     var ratio = $(window).width() / $(window).height();
                     if (ratio<1.0) {
@@ -334,41 +338,43 @@
                         $('.manga').turn("display", "double");
                     }
 */
-	                resizeViewport();
-	            }).bind('orientationchange', function() {
-	                resizeViewport();
-	            });
+                    resizeViewport();
+                }).bind('orientationchange', function() {
+                    resizeViewport();
+                });
 
-	            // Events for the next button
+                // Events for the next button
 
-	            $('.next-button').bind($.mouseEvents.over, function() {
-	                $(this).addClass('next-button-hover');
-	            }).bind($.mouseEvents.out, function() {
-	                $(this).removeClass('next-button-hover');
-	            }).bind($.mouseEvents.down, function() {
-	                $(this).addClass('next-button-down');
-	            }).bind($.mouseEvents.up, function() {
-	                $(this).removeClass('next-button-down');
-	            }).click(function() {
-	                $('.manga').turn('previous');
-	            });
+                $('.next-button').bind($.mouseEvents.over, function() {
+                    $(this).addClass('next-button-hover');
+                }).bind($.mouseEvents.out, function() {
+                    $(this).removeClass('next-button-hover');
+                }).bind($.mouseEvents.down, function() {
+                    $(this).addClass('next-button-down');
+                }).bind($.mouseEvents.up, function() {
+                    $(this).removeClass('next-button-down');
+                }).click(function() {
+                    $('.manga').turn('previous');
+                });
 
-	            // Events for the next button
-	            $('.previous-button').bind($.mouseEvents.over, function() {
-	                $(this).addClass('previous-button-hover');
-	            }).bind($.mouseEvents.out, function() {
-	                $(this).removeClass('previous-button-hover');
-	            }).bind($.mouseEvents.down, function() {
-	                $(this).addClass('previous-button-down');
-	            }).bind($.mouseEvents.up, function() {
-	                $(this).removeClass('previous-button-down');
-	            }).click(function() {
-	                $('.manga').turn('next');
-	            });
+                // Events for the next button
+                $('.previous-button').bind($.mouseEvents.over, function() {
+                    $(this).addClass('previous-button-hover');
+                }).bind($.mouseEvents.out, function() {
+                    $(this).removeClass('previous-button-hover');
+                }).bind($.mouseEvents.down, function() {
+                    $(this).addClass('previous-button-down');
+                }).bind($.mouseEvents.up, function() {
+                    $(this).removeClass('previous-button-down');
+                }).click(function() {
+                    $('.manga').turn('next');
+                });
 
-	            resizeViewport();
-	            $('.manga').addClass('animated');
+                resizeViewport();
+                $('.manga').addClass('animated');
             }, "json");
+            
+            // TODO: inserire sweetAlert con l'help sui comandi attivi
 
         }
 
@@ -403,10 +409,10 @@
         // Load the HTML4 version if there's not CSS transform
         yepnope({
             test : Modernizr.csstransforms,
-            yep: ['assets/lib/turn.js'],
-            nope: ['assets/lib/turn.html4.min.js'],
-            both: ['assets/lib/zoom.min.js', 'assets/js/manga-1.0.4.js', 'assets/extras/jquery.mmenu.min.all.js', 'assets/extras/markdown.min.js',
-                'assets/css/manga-1.0.1.css', 'assets/css/jquery.mmenu.all.css', 'assets/css/jquery.mmenu.themes.css'],
+            yep: ['assets/js/turn.js'],
+            nope: ['assets/js/turn.html4.min.js'],
+            both: ['assets/js/zoom.min.js', 'assets/js/manga.js?lu=<?=$mangaJs?>', 'assets/js/jquery.mmenu.min.all.js', 'assets/js/markdown.min.js',
+                'assets/css/manga.css?lu=<?=$mangaCss?>', 'assets/css/jquery.mmenu.all.css', 'assets/css/jquery.mmenu.themes.css'],
             complete: loadApp
         });
 

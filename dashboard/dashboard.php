@@ -36,6 +36,9 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+    <script src="../assets/js/sweet-alert-bootstrap/sweet-alert.min.js"></script>
+    <link href="../assets/css/sweet-alert-bootstrap/sweet-alert.css" rel="stylesheet" >
 </head>
 <body>
     <div id="wrapper">
@@ -255,8 +258,6 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
     <!-- Metis Menu Plugin JavaScript -->
     <script src="js/plugins/metisMenu/metisMenu.min.js"></script>
 
-    <script src="../assets/js/sweet-alert.min.js"></script>
-    <link href="../assets/css/sweet-alert.css" rel="stylesheet" >
     <!-- Custom Theme JavaScript -->
     <script src="js/dashboard.js?lu=<?=filectime("js".DS."dashboard.js")?>"></script>
     <script type="text/javascript">
