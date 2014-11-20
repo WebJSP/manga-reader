@@ -6,5 +6,4 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Garoevans\\PhpEnum\\' => array($vendorDir . '/garoevans/php-enum/src'),
 );
