@@ -19,7 +19,8 @@
         cancelButtonText: 'Cancel',
         imageUrl: null,
         imageSize: null,
-        timer: null
+        timer: null,
+        escapeHtml: true
       };
 
 
@@ -226,6 +227,8 @@
         params.closeOnConfirm     = arguments[0].closeOnConfirm !== undefined ? arguments[0].closeOnConfirm : defaultParams.closeOnConfirm;
         params.closeOnCancel      = arguments[0].closeOnCancel !== undefined ? arguments[0].closeOnCancel : defaultParams.closeOnCancel;
         params.timer              = arguments[0].timer || defaultParams.timer;
+        
+        params.escapeHtml         = arguments[0].escapeHtml !== undefined ? arguments[0].escapeHtml : defaultParams.escapeHtml;
 
         // Show "Confirm" instead of "OK" if cancel button is visible
         params.confirmButtonText  = (defaultParams.showCancelButton) ? 'Confirm' : defaultParams.confirmButtonText;
@@ -492,7 +495,9 @@
     $title.innerHTML = escapeHtml(params.title).split("\n").join("<br>");
 
     // Text
-    $text.innerHTML = escapeHtml(params.text || '').split("\n").join("<br>");
+    $text.innerHTML = params.escapeHtml ? 
+        escapeHtml(params.text || '').split("\n").join("<br>") : 
+        params.text || '';
     if (params.text) {
       show($text);
     }

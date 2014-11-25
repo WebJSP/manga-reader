@@ -26,6 +26,11 @@
     }
     $mangaJs = filectime("assets".DS."js".DS."manga.js");
     $mangaCss = filectime("assets".DS."css".DS."manga.css");
+    $showHelp = filter_input(INPUT_COOKIE, "showHelp");
+    if (!isset($showHelp) || $showHelp=="1") {
+        $showHelp="1";
+        setcookie("showHelp", "0", time()+60*60*24*30, "/");
+    }
 ?><!doctype html>
 <html lang="en"<?php 
     if($browser=='MSIE' && $version<7) {  
@@ -66,8 +71,8 @@
         }
     </style>
 
-    <script src="../assets/js/sweet-alert/sweet-alert.min.js"></script>
-    <link href="../assets/css/sweet-alert/sweet-alert.css" rel="stylesheet" >
+    <script src="assets/js/sweet-alert/sweet-alert.js"></script>
+    <link href="assets/css/sweet-alert/sweet-alert.css" rel="stylesheet" >
 </head>
 <body>
     <div id="canvas">
@@ -88,10 +93,10 @@
     </div>
     <script type="text/javascript">
     	var mangaReader = {
-            DS: "<?php echo addslashes(DS); ?>",
+            DS: "<?=addslashes(DS)?>",
             data: [],
-            page: <?php echo $page; ?>,
-            volume: <?php echo $volume; ?>,
+            page: <?=$page?>,
+            volume: <?=$volume?>,
             activeVolume: undefined
         }, flipbook = $('.manga');
 
@@ -219,7 +224,7 @@
             }
 
             $.post('php/folders.php', {
-            	folder: '<?php echo MANGAS_FOLDER.DS.$folder; ?>'
+            	folder: '<?=MANGAS_FOLDER.DS.$folder?>'
             }, function(data) {
             	mangaReader.data = data;
                 // build the menu
@@ -232,7 +237,7 @@
                     var menuRow =
                         '<li class="img">'+
                             '<a href="#">'+
-                                '<img src="<?php echo MANGAS_FOLDER."/".$folder;?>/volume'+volumeNo+'.jpg" />'+
+                                '<img src="<?=MANGAS_FOLDER."/".$folder?>/volume'+volumeNo+'.jpg" />'+
                                 volumeName+'<br/>'+
                                 '<small>'+description+'</small>'+
                             '</a>'+
@@ -257,7 +262,7 @@
                         zposition: "front"
                     },
                     header: {
-                        title: "<?php echo $mangaTitle;?>",
+                        title: "<?=$mangaTitle?>",
                         add: true,
                         update: true
                     }
@@ -374,8 +379,15 @@
                 $('.manga').addClass('animated');
             }, "json");
             
-            // TODO: inserire sweetAlert con l'help sui comandi attivi
-
+<?php if ($showHelp=="1") { ?>
+            sweetAlert({
+                title: "<?=$phrases["reader.php"]["help-title"]?>",
+                text: "<?=$phrases["reader.php"]["help-content"]?>",
+                type: "info",
+                escapeHtml: false,
+                timer: 30000
+            });
+<?php } ?>
         }
 
          // Zoom icon

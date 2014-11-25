@@ -1,5 +1,7 @@
 {
     "reader.php": {
+        "help-title": "Manga Reader Help",
+        "help-content": "Su un computer:<br>premere i tasti cursore o cliccate sugli angoli per girare le pagine,<br>cliccate nella pagina per attivare lo zoom<br>Su un mobile:<br>premete sugli angoli per girare le pagine e usate una doppia pressione per attivare lo zoom.",
         "title": "Manga Reader",
         "esc-tip": "Premi ESC per uscire"
     },
