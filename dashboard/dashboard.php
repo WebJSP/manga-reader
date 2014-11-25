@@ -263,7 +263,7 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
     <script type="text/javascript">
         $(document).ready(function(){
             sweetAlertInitialize();
-            $('#manga-list div.table-responsive').load('php/manga-list.php'); 
+            $('#manga-list div.table-responsive').load('manga-list.php'); 
         });
         
         function showNotLoggedAlert() {
@@ -318,7 +318,7 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
                             });
                         }
                     }).always(function(){
-                        $('#manga-list div.table-responsive').load('php/manga-list.php'); 
+                        $('#manga-list div.table-responsive').load('manga-list.php'); 
                     });
                 });
             }

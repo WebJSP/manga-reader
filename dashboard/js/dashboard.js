@@ -57,7 +57,7 @@ function createMangaSubmit(event) {
         $("#edit-manga").addClass("hidden");
     }).always(function(){
         $("#create-manga-form input").val("");
-        $('#manga-list div.table-responsive').load('php/manga-list.php'); 
+        $('#manga-list div.table-responsive').load('manga-list.php'); 
     });
     event.preventDefault();
 }
