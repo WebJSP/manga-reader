@@ -231,7 +231,7 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-edit fa-fw"></i> <?=$phrases["dashboard/dashboard.php"]["edit-manga"]?>
+                            <i class="fa fa-edit fa-fw"></i> <?=$phrases["dashboard/dashboard.php"]["edit-manga"]?> - <span id="manga-title"></span>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -262,7 +262,7 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
     <script src="js/dashboard.js?lu=<?=filectime("js".DS."dashboard.js")?>"></script>
     <script type="text/javascript">
         $(document).ready(function(){
-            sweetAlertInitialize();
+            //sweetAlertInitialize();
             $('#manga-list div.table-responsive').load('manga-list.php'); 
         });
         

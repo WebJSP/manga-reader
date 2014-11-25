@@ -50,6 +50,7 @@ function createMangaSubmit(event) {
         }
     }).done(function(data, textStatus, jqXHR){
         $("#create-manga").addClass("hidden");
+        $("#manga-title").text(data.title);
         $("#edit-manga").removeClass("hidden");
     }).fail(function(data, textStatus, jqXHR){
         $("#manga-list").removeClass("hidden");
