@@ -4,36 +4,35 @@ header('Content-Type: application/json; charset=utf-8');
 error_reporting(0);
 
 $folder = filter_input(INPUT_POST, "folder");
-if (!isset($folder)) {
-    $folder = filter_input(INPUT_GET, "folder");
-}
-
 if (isset($folder)) {
     $folders = array();
     foreach (new DirectoryIterator('..'.DS.$folder) as $dirInfo) {
-        if($dirInfo->isDot()) 
+        if($dirInfo->isDot()) {
             continue;
-        if(!$dirInfo->isDir()) 
+        }
+        if(!$dirInfo->isDir()) {
             continue;
+        }
         $path = $folder.DS.$dirInfo->getFilename();
         $files = array();
         foreach (new DirectoryIterator('..'.DS.$path) as $fileInfo) {
-            if($fileInfo->isDot() || !$fileInfo->isFile()) 
+            if($fileInfo->isDot() || !$fileInfo->isFile()) {
                 continue;
-            if($fileInfo->getExtension()=='json')
+            }
+            if($fileInfo->getExtension()=='json') {
                 continue;
+            }
             $files[] = $path.DS.$fileInfo->getFilename();
         }
         sort($files, SORT_STRING);
         $info = json_decode(utf8_encode(file_get_contents('..'.DS.$path.".json")), true);
-        $contents = array();
-        $contents["path"]=$path;
-        $contents["files"]=$files;
-        $contents["info"]=$info;
-        $folders[] = $contents;
+        $folders[] = array(
+            "path" => $path,
+            "files" => $files,
+            "info" => $info
+        );
         usort($folders, "folderCompare");
     }
-    //sort($folders, SORT_STRING);
     echo json_encode($folders);
 } else {
     echo "[]";

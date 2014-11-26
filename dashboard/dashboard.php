@@ -22,13 +22,16 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="../assets/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/metisMenu/1.1.3/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="../assets/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/jquery-bootgrid/1.1.4/jquery.bootgrid.min.css">
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -142,10 +145,16 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="table-responsive">
-                                <div class="col-lg-12 text-center">
-                                    <i class="fa fa-circle-o-notch fa-spin"></i> <?=$phrases["dashboard/dashboard.php"]["loading"]?>
-                                </div>
-                                <!-- ajax generated table -->
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th data-column-id="id" data-sortable="false" data-type="numeric">#</th>
+                                            <th data-column-id="title"><?=$phrases["dashboard/php/manga-list.php"]["title"]?></th>
+                                            <th data-column-id="folder" data-identifier="true"><?=$phrases["dashboard/php/manga-list.php"]["folder"]?></th>
+                                            <th data-column-id="creation"><?=$phrases["dashboard/php/manga-list.php"]["creation"]?></th>
+                                        </tr>
+                                    </thead>
+                                </table>
                             </div>
                             <!-- /.table-responsive -->
                         </div>
@@ -250,20 +259,32 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="js/plugins/metisMenu/metisMenu.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/metisMenu/1.1.3/metisMenu.min.js"></script>
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-bootgrid/1.1.4/jquery.bootgrid.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="js/dashboard.js?lu=<?=filectime("js".DS."dashboard.js")?>"></script>
     <script type="text/javascript">
+        var dashboard = {
+          grid: undefined  
+        };
         $(document).ready(function(){
-            //sweetAlertInitialize();
-            $('#manga-list div.table-responsive').load('manga-list.php'); 
+            dashboard.grid = $('#manga-list table').bootgrid({
+                ajax: true,
+                selection: true,
+                url: "manga-list.php",
+                rowSelect: true
+            }).on("selected.rs.jquery.bootgrid", function(e, rows)
+            {
+                alert(rows[0].folder);
+            }); 
         });
         
         function showNotLoggedAlert() {
@@ -318,7 +339,7 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
                             });
                         }
                     }).always(function(){
-                        $('#manga-list div.table-responsive').load('manga-list.php'); 
+                        dashboard.grid.reload(); 
                     });
                 });
             }
