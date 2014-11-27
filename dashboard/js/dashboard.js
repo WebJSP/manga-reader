@@ -1,7 +1,5 @@
 $(function() {
-
     $('#side-menu').metisMenu();
-
 });
 
 //Loads the correct sidebar on window load,
@@ -58,7 +56,7 @@ function createMangaSubmit(event) {
         $("#edit-manga").addClass("hidden");
     }).always(function(){
         $("#create-manga-form input").val("");
-        $('#manga-list div.table-responsive').load('manga-list.php'); 
+        dashboard.grid.reload(); 
     });
     event.preventDefault();
 }

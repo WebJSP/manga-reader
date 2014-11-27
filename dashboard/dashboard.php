@@ -144,18 +144,18 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table">
+                            <!--div class="table-responsive"-->
+                                <table class="table table-condensed table-hover table-striped">
                                     <thead>
                                         <tr>
                                             <th data-column-id="id" data-sortable="false" data-type="numeric">#</th>
-                                            <th data-column-id="title"><?=$phrases["dashboard/php/manga-list.php"]["title"]?></th>
-                                            <th data-column-id="folder" data-identifier="true"><?=$phrases["dashboard/php/manga-list.php"]["folder"]?></th>
-                                            <th data-column-id="creation"><?=$phrases["dashboard/php/manga-list.php"]["creation"]?></th>
+                                            <th data-column-id="title"><?=$phrases["dashboard/manga-list.php"]["title"]?></th>
+                                            <th data-column-id="folder" data-identifier="true" data-order="asc"><?=$phrases["dashboard/manga-list.php"]["folder"]?></th>
+                                            <th data-column-id="creation"><?=$phrases["dashboard/manga-list.php"]["creation"]?></th>
                                         </tr>
                                     </thead>
                                 </table>
-                            </div>
+                            <!--/div-->
                             <!-- /.table-responsive -->
                         </div>
                         <!-- /.panel-body -->
@@ -280,10 +280,12 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
                 ajax: true,
                 selection: true,
                 url: "manga-list.php",
-                rowSelect: true
+                rowSelect: true,
+                rowCount: 10,
+                columnSelection: false
             }).on("selected.rs.jquery.bootgrid", function(e, rows)
             {
-                alert(rows[0].folder);
+                //alert(rows[0].folder);
             }); 
         });
         
@@ -317,8 +319,7 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
                     showCancelButton: true, 
                     cancelButtonText: "<?=$phrases["dashboard/php/delete-manga.php"]["cancel-button"]?>",
                     confirmButtonColor: "#DD6B55", 
-                    confirmButtonText: "<?=$phrases["dashboard/php/delete-manga.php"]["yes-button"]?>"/*, 
-                    closeOnConfirm: false*/
+                    confirmButtonText: "<?=$phrases["dashboard/php/delete-manga.php"]["yes-button"]?>"
                 }, function () {
                     $.ajax("php/delete-manga.php", {
                         method: "post",

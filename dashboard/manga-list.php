@@ -11,10 +11,11 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
     $sort = null;
     $params = filter_input_array(INPUT_POST);
     foreach($params as $param => $value) {
-        if (stripos($param, "sort[")!==FALSE) {
+        if ($param==="sort") {
+            $key = array_keys($value)[0];
             $sort = array(
-                "field"=>substr($param, 5, strlen($param)-6), 
-                "direction"=>$value[0]
+                "field" => $key, 
+                "direction" => $value[$key]
             ); 
             continue;
         }
@@ -50,8 +51,8 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
     if (isset($sort)) {
         usort($rows, $comparableName);
     }
-    $response["rows"] = array_slice($rows, $current, $rowCount);
-    $response["total"] = $rowCount;
+    $response["rows"] = array_slice($rows, $current-1, $rowCount);
+    $response["total"] = $rowNo-1;
     echo json_encode($response);
 } else {
     http_response_code(HttpStatusCode::FORBIDDEN);

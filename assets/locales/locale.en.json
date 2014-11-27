@@ -35,7 +35,7 @@
         "alert-title": "Warning!",
         "no-access": "You doesn't have enough rights to access Dashboard!"
     },
-    "dashboard/php/manga-list.php": {
+    "dashboard/manga-list.php": {
         "title": "Title",
         "folder": "Folder",
         "creation": "Creation"

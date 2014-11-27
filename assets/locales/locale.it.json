@@ -35,7 +35,7 @@
         "alert-title": "Attenzione!",
         "no-access": "Non hai i permessi per accedere al pannello di controllo!"
     },
-    "dashboard/php/manga-list.php": {
+    "dashboard/manga-list.php": {
         "title": "Titolo",
         "folder": "Cartella",
         "creation": "Ultima Modifica"
