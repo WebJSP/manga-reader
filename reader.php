@@ -50,6 +50,7 @@
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/yepnope/1.5.4/yepnope.min.js"></script>
     <script type="text/javascript" src="assets/js/hash.js"></script>
     <style type="text/css">
         .mm-menu li.img:after
@@ -116,7 +117,7 @@
                 // Duration in millisecond
                 duration: 800,
                 // Hardware acceleration
-                acceleration: !isChrome(),
+                acceleration: true/*!isChrome()*/,
                 // Enables gradients
                 gradients: true,
                 // Auto center this flipbook
