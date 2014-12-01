@@ -14,7 +14,7 @@ foreach (new DirectoryIterator($folder) as $dirInfo) {
     if (!$dirInfo->isDir()) {
         continue;
     }
-    $title = file_get_contents($folder.$dirInfo->getFilename().DS.'title.txt');
+    $title = file_get_contents($folder.$dirInfo->getFilename().DS.'info'.DS.'title.txt');
 
     $row = array(
         "title"=>$title,

@@ -13,6 +13,9 @@ if (isset($folder)) {
         if(!$dirInfo->isDir()) {
             continue;
         }
+        if ($dirInfo->getFilename()==="info") {
+            continue;
+        }
         $path = $folder.DS.$dirInfo->getFilename();
         $files = array();
         foreach (new DirectoryIterator('..'.DS.$path) as $fileInfo) {

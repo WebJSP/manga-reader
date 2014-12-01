@@ -37,7 +37,7 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
         if (!$dirInfo->isDir()) {
             continue;
         }
-        $title = file_get_contents($folder.$dirInfo->getFilename().DS.'title.txt');
+        $title = file_get_contents($folder.$dirInfo->getFilename().DS.'info'.DS.'title.txt');
         
         $row = array(
             "id"=>$rowNo++,

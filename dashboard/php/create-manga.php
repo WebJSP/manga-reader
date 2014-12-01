@@ -19,7 +19,9 @@ if (isset($_SESSION['admin_id']) && in_array($_SESSION['admin_id'], $ADMIN_IDs))
             } else {
                 try {
                     mkdir($folder.$name, 0775);
-                    file_put_contents($folder.$name.DS."title.txt", utf8_encode($title));
+                    mkdir($folder.$name.DS."info", 0775);
+                    file_put_contents($folder.$name.DS."info".DS."title.txt", utf8_encode($title));
+                    file_put_contents($folder.$name.DS.".htaccess", "Options All -Indexes");
                     echo json_encode(array(
                         "success" => true,
                         "name" => utf8_encode($name),
