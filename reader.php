@@ -78,10 +78,17 @@
 </head>
 <body>
     <div id="canvas">
-        <a id="manga-menu" href="#my-manga-menu"></a>
-        <nav id="my-manga-menu"><ul></ul></nav>
-        <div class="zoom-icon zoom-icon-in"></div>
-        <div class="fullscreen-icon"></div>
+        <p class="fa-ul" id="button-bar">
+            <a id="manga-menu" href="#my-manga-menu"><i class="fa fa-bars fa-2x"></i></a><br>
+            <i class="zoom-icon fa fa-search-plus fa-2x"></i><br>
+            <i class="fullscreen-icon fa fa-arrows-alt fa-2x"></i>
+        </p>
+        <!--a id="manga-menu" href="#my-manga-menu"></a-->
+        <nav id="my-manga-menu">
+            <ul></ul>
+        </nav>
+        <!--div class="zoom-icon zoom-icon-in"></div-->
+        <!--div class="fullscreen-icon"></div-->
         <div class="manga-viewport">
 	        <div class="container">
 		        <div class="manga">
@@ -118,7 +125,7 @@
                 // Duration in millisecond
                 duration: 800,
                 // Hardware acceleration
-                acceleration: true/*!isChrome()*/,
+                acceleration: true,
                 // Enables gradients
                 gradients: true,
                 // Auto center this flipbook
@@ -181,7 +188,7 @@
                     zoomIn: function () {
                         $('.made').hide();
                         $('.manga').removeClass('animated').addClass('zoom-in');
-                        $('.zoom-icon').removeClass('zoom-icon-in').addClass('zoom-icon-out');
+                        $('.zoom-icon').removeClass('fa-search-plus').addClass('fa-search-minus');
 
                         if (!window.escTip && !$.isTouch) {
                             escTip = true;
@@ -198,7 +205,7 @@
                     zoomOut: function () {
                         $('.exit-message').hide();
                         $('.made').fadeIn();
-                        $('.zoom-icon').removeClass('zoom-icon-out').addClass('zoom-icon-in');
+                        $('.zoom-icon').removeClass('fa-search-minus').addClass('fa-search-plus');
 
                         setTimeout(function(){
                             $('.manga').addClass('animated').removeClass('zoom-in');
@@ -394,19 +401,19 @@
 
          // Zoom icon
          $('.zoom-icon').bind('mouseover', function() {
-            if ($(this).hasClass('zoom-icon-in'))
-                $(this).addClass('zoom-icon-in-hover');
-            if ($(this).hasClass('zoom-icon-out'))
-                $(this).addClass('zoom-icon-out-hover');
+//            if ($(this).hasClass('zoom-icon-in'))
+//                $(this).addClass('zoom-icon-in-hover');
+//            if ($(this).hasClass('zoom-icon-out'))
+//                $(this).addClass('zoom-icon-out-hover');
          }).bind('mouseout', function() {
-             if ($(this).hasClass('zoom-icon-in'))
-                $(this).removeClass('zoom-icon-in-hover');
-            if ($(this).hasClass('zoom-icon-out'))
-                $(this).removeClass('zoom-icon-out-hover');
+//             if ($(this).hasClass('zoom-icon-in'))
+//                $(this).removeClass('zoom-icon-in-hover');
+//            if ($(this).hasClass('zoom-icon-out'))
+//                $(this).removeClass('zoom-icon-out-hover');
          }).bind('click', function() {
-            if ($(this).hasClass('zoom-icon-in'))
+            if ($(this).hasClass('fa-search-plus'))
                 $('.manga-viewport').zoom('zoomIn');
-            else if ($(this).hasClass('zoom-icon-out'))
+            else if ($(this).hasClass('fa-search-minus'))
                 $('.manga-viewport').zoom('zoomOut');
          });
 
