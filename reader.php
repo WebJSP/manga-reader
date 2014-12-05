@@ -32,7 +32,7 @@
         setcookie("showHelp", "0", time()+60*60*24*30, "/");
     }
 ?><!doctype html>
-<html lang="en"<?php 
+<html lang="<?=READER_LANGUAGE_CODE?>"<?php 
     if($browser=='MSIE' && $version<7) {  
         echo ' class="ie6"'; 
     } else if($browser=='MSIE' && $version==7) {  
@@ -224,7 +224,6 @@
 
         function loadApp() {
             $('#canvas').fadeIn(1000);
-            //var flipbook = $('.manga');
 
             // Check if the CSS was already loaded
             if (flipbook.width()===0 || flipbook.height()===0) {
@@ -425,7 +424,7 @@
                 launchIntoFullscreen(document.documentElement);
         });
 
-         $('#canvas').hide();
+        $('#canvas').hide();
 
         // Load the HTML4 version if there's not CSS transform
         yepnope({

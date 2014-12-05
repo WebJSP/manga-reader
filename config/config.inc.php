@@ -4,6 +4,7 @@
     define('MANGAS_FOLDER'              , 'mangas');
     $ADMIN_IDs = array( 2807710899 );
     $languageCode = getUserLanguage();
+    define('READER_LANGUAGE_CODE'       , $languageCode);
     $phrases = getPhrases($languageCode);
     $requestScheme = filter_input(INPUT_SERVER, "REQUEST_SCHEME");
     $httpHost = filter_input(INPUT_SERVER, "HTTP_HOST");

@@ -1,0 +1,63 @@
+.flip-container {
+    /* Rappresenta l'inclinazione prospettica, in questo caso della rotazione */
+    -webkit-perspective: 800;
+    -moz-perspective: 800;
+    -ms-perspective: 800;
+    perspective: 800;
+    margin:0 auto;
+}
+
+/* ruota il pannello al mousehover */
+.flip-container:hover .flipper,
+.flip-container.hover .flipper {
+    -moz-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.flip-container,
+.front,
+.back {
+    width: 321px;
+    height: 449px;
+}
+
+/* flip speed goes here */
+.flipper {
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    transition: 0.4s;
+    -moz-transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+/* hide back of pane during swap */
+.front,
+.back {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background:none;
+}
+
+/*  front pane, placed above back, quello con lo z-index + alto, 
+    anche se sta prima nel codice, finisce sopra */
+.front {
+    z-index: 2;
+    box-shadow:0 0 50px rgba(0,0,0,0.3);
+}
+
+/* back, initially hidden pane */
+.back {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    box-shadow:0 0 40px rgba(0,0,0,0.2);
+}
