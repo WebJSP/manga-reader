@@ -5,7 +5,7 @@ require_once '../phplib/HttpStatusCode.php';
 require_once '../config/config.inc.php';
 header('Content-Type: application/json; charset=utf-8');
 $searchPhrase = filter_input(INPUT_POST, "searchPhrase");
-$folder = "..".DS."mangas".DS;
+$folder = "..".DS.MANGAS_FOLDER.DS;
 $rows = array();
 foreach (new DirectoryIterator($folder) as $dirInfo) {
     if ($dirInfo->isDot()) {
@@ -19,7 +19,8 @@ foreach (new DirectoryIterator($folder) as $dirInfo) {
     $row = array(
         "title"=>$title,
         "folder"=>$dirInfo->getFilename(),
-        "creation"=>date("j/n/Y", $dirInfo->getMTime())
+        "creation"=>date("j/n/Y", $dirInfo->getMTime()),
+        "folders"=>readFolder($dirInfo->getFilename())
     );
     array_push($rows, $row);
 }
@@ -47,4 +48,29 @@ function compareByDateAsc($a, $b){
 }
 function compareByDateDesc($a, $b){
     return -compareByDateAsc($a, $b);
+}
+function folderCompare($a, $b){
+    return strnatcmp($a["path"], $b["path"]);
+}
+function readFolder($folder) {
+    $folders = array();
+    foreach (new DirectoryIterator('..'.DS.MANGAS_FOLDER.DS.$folder) as $dirInfo) {
+        if($dirInfo->isDot()) {
+            continue;
+        }
+        if(!$dirInfo->isDir()) {
+            continue;
+        }
+        if ($dirInfo->getFilename()==="info") {
+            continue;
+        }
+        $path = DS.MANGAS_FOLDER.DS.$folder.DS.$dirInfo->getFilename();
+        $info = json_decode(utf8_encode(file_get_contents('..'.DS.$path.".json")), true);
+        $folders[] = array(
+            "path" => $path,
+            "info" => $info
+        );
+        usort($folders, "folderCompare");
+    }
+    return $folders;
 }
