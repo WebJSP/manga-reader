@@ -65,4 +65,14 @@
     -moz-transform: rotateY(180deg);
     transform: rotateY(180deg);
     box-shadow:0 0 40px rgba(0,0,0,0.2);
+    overflow-y: hidden;
+}
+
+.back ul {
+    list-style-type: none;
+    padding-left: 5px;
+}
+
+.back ul li{
+    font-size: 12px;
 }

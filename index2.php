@@ -48,8 +48,25 @@
             var bookShelf = {
                 mangas: undefined,
                 
-                createVolumeList: function(folder) {
-                    
+                createVolumeList: function(manga, volumes) {
+                    var ul = $(document.createElement('ul'));
+                    for (var i=0; i<volumes.length; i++) {
+                        var li = $(document.createElement('li')),
+                            h3 = $(document.createElement('h3'));
+                        h3.text(volumes[i].info.name).appendTo(li);
+                        li.appendTo(ul);
+                        
+                        for (var j=0; j<volumes[i].info.chapters.length; j++) {
+                            var li = $(document.createElement('li')),
+                                a = $(document.createElement('a')),
+                                chapter = volumes[i].info.chapters[j];
+                            a.attr('href', 'reader.php?manga='+manga+'&vol='+volumes[i].info.volume+'#page/'+chapter.page);
+                            a.text(chapter.title);
+                            a.appendTo(li);
+                            li.appendTo(ul);
+                        }
+                    }
+                    return ul;
                 }
             };
             
@@ -79,7 +96,7 @@
                                 flipDiv.addClass("flip-container");
                                 flipper.addClass("flipper");
                                 flipFront.addClass("front").html("<img src=\"mangas/"+folder+"/info/cover.jpg\">").appendTo(flipper);
-                                flipBack.addClass("back").html("<p>"+title+"</p>").appendTo(flipper);
+                                flipBack.addClass("back").append(bookShelf.createVolumeList(folder, manga.folders)).appendTo(flipper);
                                 flipper.appendTo(flipDiv);
                                 flipDiv.appendTo(div);
                                 div.appendTo(container);
