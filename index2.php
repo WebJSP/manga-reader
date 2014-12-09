@@ -59,8 +59,12 @@
                         for (var j=0; j<volumes[i].info.chapters.length; j++) {
                             var li = $(document.createElement('li')),
                                 a = $(document.createElement('a')),
-                                chapter = volumes[i].info.chapters[j];
-                            a.attr('href', 'reader.php?manga='+manga+'&vol='+volumes[i].info.volume+'#page/'+chapter.page);
+                                chapter = volumes[i].info.chapters[j],
+                                baseUrl = 'reader.php?manga='+manga+'&vol='+volumes[i].info.volume;
+                            if (chapter.page>1) {
+                                baseUrl += '#page/'+chapter.page;
+                            }
+                            a.attr('href', baseUrl);
                             a.text(chapter.title);
                             a.appendTo(li);
                             li.appendTo(ul);

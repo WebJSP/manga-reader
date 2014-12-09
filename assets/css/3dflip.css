@@ -70,9 +70,28 @@
 
 .back ul {
     list-style-type: none;
+    padding: 0;
     padding-left: 5px;
+    margin: 0;
 }
 
-.back ul li{
-    font-size: 12px;
+.back li h3{
+    color: #df8a13;
+    margin: 0;
+    margin-bottom: 2px;
+}
+
+.back li a{
+    font-size: 10px;
+    text-decoration: none;
+    color: #FFFFFF;
+    -webkit-transition: color 0.3s ease;
+    -moz-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
+    -ms-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+}
+
+.back li a:hover {
+    color: #eee;
 }
