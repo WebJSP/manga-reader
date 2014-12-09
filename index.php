@@ -27,7 +27,9 @@
         <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
         <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js?v=2.1.2"></script>
         <script src="assets/js/sweet-alert/sweet-alert.js"></script>
+        <script src="assets/js/jquery.nanoscroller.min.js"></script>
         <link href="assets/css/sweet-alert/sweet-alert.css" rel="stylesheet" >
+        <link href="assets/css/nanoscroller.css" rel="stylesheet" >
         <link href="assets/css/mix.css?<?=$mixCss?>" rel="stylesheet" />
         <link href="assets/css/3dflip.css?<?=$flipCss?>" rel="stylesheet" />
     </head>
@@ -49,7 +51,8 @@
                 mangas: undefined,
                 
                 createVolumeList: function(manga, volumes) {
-                    var ul = $(document.createElement('ul'));
+                    var divNano = $(document.createElement('div')).addClass('nano'),
+                        ul = $(document.createElement('ul')).addClass('nano-content');
                     for (var i=0; i<volumes.length; i++) {
                         var li = $(document.createElement('li')),
                             h3 = $(document.createElement('h3'));
@@ -70,7 +73,8 @@
                             li.appendTo(ul);
                         }
                     }
-                    return ul;
+                    ul.appendTo(divNano);
+                    return divNano;
                 }
             };
             
@@ -99,14 +103,26 @@
                                     .attr("data-myorder", title);
                                 flipDiv.addClass("flip-container");
                                 flipper.addClass("flipper");
-                                flipFront.addClass("front").html("<img src=\"mangas/"+folder+"/info/cover.jpg\">").appendTo(flipper);
-                                flipBack.addClass("back").append(bookShelf.createVolumeList(folder, manga.folders)).appendTo(flipper);
+                                flipFront
+                                    .addClass("front")
+                                    .html("<img src=\"mangas/"+folder+"/info/cover.jpg\">")
+                                    .appendTo(flipper);
+                                flipBack
+                                    .addClass("back")
+                                    .append(bookShelf.createVolumeList(folder, manga.folders))
+                                    .appendTo(flipper);
                                 flipper.appendTo(flipDiv);
                                 flipDiv.appendTo(div);
                                 div.appendTo(container);
                             }
-                            //console.dir(bookShelf.mangas);
+                            $(".nano").nanoScroller({ 
+                                preventPageScrolling: true,
+                                alwaysVisible: true
+                            });
                             $("#Container").mixItUp();
+                            $('.back').on( "mouseenter", function(event){
+                                $('.nano').nanoScroller();
+                            });
                         }
                     }
                 );

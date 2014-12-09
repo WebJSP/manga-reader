@@ -46,7 +46,6 @@ button + label{
 .container{
   padding: 2% 2% 0;
   text-align: justify;
-  /*font-size: 0.1px;*/
   background: #68b8c4;
 
   -webkit-backface-visibility: hidden;
@@ -71,15 +70,7 @@ button + label{
   display: none;
 }
 
-/*.container .mix.category-1{
-  border-top: 2px solid limegreen;
-}
-
-.container .mix.category-2{
-  border-top: 2px solid yellow;
-}*/
-
-.container .mix:after{
+.container .mix:before{
   content: attr(data-myorder);
   color: white;
   font-size: 16px;
@@ -90,27 +81,13 @@ button + label{
   text-align: center;
 }
 
-.container .mix:before{
+.container .mix:after{
   content: '';
   display: inline-block;
-  padding-top: 10%;
+  padding-bottom: 10%;
 }
 
   .container .mix,
   .container .gap{
     width: 205px;
   }
-
-/*@media all and (min-width: 420px){
-  .container .mix,
-  .container .gap{
-    width: 32%;
-  }
-}
-
-@media all and (min-width: 640px){
-  .container .mix,
-  .container .gap{
-    width: 23.5%;
-  }
-}            */
