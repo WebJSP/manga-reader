@@ -14,10 +14,9 @@ foreach (new DirectoryIterator($folder) as $dirInfo) {
     if (!$dirInfo->isDir()) {
         continue;
     }
-    $title = file_get_contents($folder.$dirInfo->getFilename().DS.'info'.DS.'title.txt');
-
+    $info = json_decode(utf8_encode(file_get_contents($folder.$dirInfo->getFilename().DS.'info'.DS.'info.json')), true);
     $row = array(
-        "title"=>$title,
+        "info"=>$info,
         "folder"=>$dirInfo->getFilename(),
         "creation"=>date("j/n/Y", $dirInfo->getMTime()),
         "folders"=>readFolder($dirInfo->getFilename())

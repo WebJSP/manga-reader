@@ -40,8 +40,10 @@
     <body>
         <div class="controls">
             <label>Filtri:</label>
-            <button class="filter active" data-filter="all">Tutto</button>
-            <?php foreach ($categories as $key=>$value){?><button class="filter" data-filter=".<?=$key?>"><?=$value?></button> <?php }?>
+            <select id="filter">
+                <option data-filter="all">Tutto</option>
+                <?php foreach ($categories as $key=>$value){?><option data-filter=".<?=$key?>"><?=$value?></option> <?php }?>
+            </select>
             <label>Ordinamento:</label>
             <button class="sort" data-sort="myorder:asc">Asc</button>
             <button class="sort" data-sort="myorder:desc">Desc</button>
@@ -56,14 +58,14 @@
                     for (var i=0; i<bookShelf.mangas.length; i++) {
                         var manga = bookShelf.mangas[i],
                             folder = manga.folder,
-                            title = manga.title,
+                            title = manga.info.title,
                             div = $(document.createElement('div')),
                             flipDiv = $(document.createElement('div')),
                             flipper = $(document.createElement('div')),
                             flipFront = $(document.createElement('div')),
                             flipBack = $(document.createElement('div'));
                         div
-                            .addClass("mix category-1")
+                            .addClass("mix "+manga.info.tags)
                             .attr("data-myorder", title);
                         flipDiv.addClass("flip-container");
                         flipper.addClass("flipper");
@@ -125,6 +127,12 @@
                             $("#Container").mixItUp();
                             $('.back').on( "mouseenter", function(event){
                                 $('.nano').nanoScroller();
+                            });
+                            $('#filter').on( "change", function(event){
+                                var option = $(this).children().filter(":checked");
+                                if (option.length>0) {
+                                    $("#Container").mixItUp("filter", option.data("filter") );
+                                }
                             });
                         }
                     }
