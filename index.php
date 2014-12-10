@@ -24,6 +24,7 @@
 ?><!doctype html>
 <html lang="<?=READER_LANGUAGE_CODE?>">
     <head>
+        <title><?=$phrases["index.php"]["title"]?></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -39,12 +40,12 @@
     </head>
     <body>
         <div class="controls">
-            <label>Filtri:</label>
+            <label><?=$phrases["index.php"]["filters"]?>:</label>
             <select id="filter">
                 <option data-filter="all">Tutto</option>
                 <?php foreach ($categories as $key=>$value){?><option data-filter=".<?=$key?>"><?=$value?></option> <?php }?>
             </select>
-            <label>Ordinamento:</label>
+            <label><?=$phrases["index.php"]["sort"]?>:</label>
             <button class="sort" data-sort="myorder:asc">Asc</button>
             <button class="sort" data-sort="myorder:desc">Desc</button>
         </div>
@@ -125,10 +126,10 @@
                                 alwaysVisible: true
                             });
                             $("#Container").mixItUp();
-                            $('.back').on( "mouseenter", function(event){
+                            $('.back').on( "mouseenter", function(){
                                 $('.nano').nanoScroller();
                             });
-                            $('#filter').on( "change", function(event){
+                            $('#filter').on( "change", function(){
                                 var option = $(this).children().filter(":checked");
                                 if (option.length>0) {
                                     $("#Container").mixItUp("filter", option.data("filter") );
