@@ -31,19 +31,22 @@
         <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
         <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js?v=2.1.2"></script>
-        <script src="assets/js/sweet-alert/sweet-alert.js"></script>
-        <script src="assets/js/jquery.nanoscroller.min.js"></script>
+        <script type="text/javascript" src="assets/js/sweet-alert/sweet-alert.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.nanoscroller.min.js"></script>
+        <script type="text/javascript" src="assets/js/chosen.jquery.min.js"></script>
         <link href="assets/css/sweet-alert/sweet-alert.css" rel="stylesheet" >
         <link href="assets/css/nanoscroller.css" rel="stylesheet" >
         <link href="assets/css/mix.css?<?=$mixCss?>" rel="stylesheet" />
         <link href="assets/css/3dflip.css?<?=$flipCss?>" rel="stylesheet" />
+        <link href="assets/css/chosen.min.css" rel="stylesheet" >
     </head>
     <body>
         <div class="controls">
-            <label><?=$phrases["index.php"]["filters"]?>:</label>
-            <select id="filter">
-                <option data-filter="all">Tutto</option>
-                <?php foreach ($categories as $key=>$value){?><option data-filter=".<?=$key?>"><?=$value?></option> <?php }?>
+            <label for="filter"><?=$phrases["index.php"]["filters"]?>:</label>
+            <select id="filter" name="filter" style="width:25%">
+                <option value="all" selected="selected">Tutto</option>
+                <?php foreach ($categories as $key=>$value){?><option value=".<?=$key?>"><?=$value?></option> <?php }?>
+
             </select>
             <label><?=$phrases["index.php"]["sort"]?>:</label>
             <button class="sort" data-sort="myorder:asc">Asc</button>
@@ -113,6 +116,11 @@
             };
             
             $(document).ready(function(){
+                $('#filter')
+                    .chosen()
+                    .on('change', function(event, params){
+                        $("#Container").mixItUp("filter", params.selected);
+                    });
                 $.post('php/manga-list.php', {}, 
                     function(data) {
                         if (data.total && data.total>0) {
@@ -126,14 +134,8 @@
                                 alwaysVisible: true
                             });
                             $("#Container").mixItUp();
-                            $('.back').on( "mouseenter", function(){
-                                $('.nano').nanoScroller();
-                            });
-                            $('#filter').on( "change", function(){
-                                var option = $(this).children().filter(":checked");
-                                if (option.length>0) {
-                                    $("#Container").mixItUp("filter", option.data("filter") );
-                                }
+                            $(".back").on( "mouseenter", function(){
+                                $(".nano").nanoScroller();
                             });
                         }
                     }
