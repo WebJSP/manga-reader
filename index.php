@@ -17,6 +17,10 @@
     }
     $flipCss = filectime("assets".DS."css".DS."3dflip.css");
     $mixCss = filectime("assets".DS."css".DS."mix.css");
+    
+    $categories = $phrases["tags"];
+    asort($categories);
+    $catKeys = array_keys($categories);
 ?><!doctype html>
 <html lang="<?=READER_LANGUAGE_CODE?>">
     <head>
@@ -37,18 +41,45 @@
         <div class="controls">
             <label>Filtri:</label>
             <button class="filter active" data-filter="all">Tutto</button>
-            <button class="filter" data-filter=".category-1">Sentimentali</button>
-            <button class="filter" data-filter=".category-2">Scolastici</button>
+            <?php foreach ($categories as $key=>$value){?><button class="filter" data-filter=".<?=$key?>"><?=$value?></button> <?php }?>
             <label>Ordinamento:</label>
             <button class="sort" data-sort="myorder:asc">Asc</button>
             <button class="sort" data-sort="myorder:desc">Desc</button>
         </div>
-        <div id="Container" class="container">
-            
-        </div>
+        <div id="Container" class="container"></div>
         <script type="text/javascript">
             var bookShelf = {
                 mangas: undefined,
+                
+                createFlip: function() {
+                    var container = $('#Container');
+                    for (var i=0; i<bookShelf.mangas.length; i++) {
+                        var manga = bookShelf.mangas[i],
+                            folder = manga.folder,
+                            title = manga.title,
+                            div = $(document.createElement('div')),
+                            flipDiv = $(document.createElement('div')),
+                            flipper = $(document.createElement('div')),
+                            flipFront = $(document.createElement('div')),
+                            flipBack = $(document.createElement('div'));
+                        div
+                            .addClass("mix category-1")
+                            .attr("data-myorder", title);
+                        flipDiv.addClass("flip-container");
+                        flipper.addClass("flipper");
+                        flipFront
+                            .addClass("front")
+                            .html("<img src=\"mangas/"+folder+"/info/cover.jpg\">")
+                            .appendTo(flipper);
+                        flipBack
+                            .addClass("back")
+                            .append(this.createVolumeList(folder, manga.folders))
+                            .appendTo(flipper);
+                        flipper.appendTo(flipDiv);
+                        flipDiv.appendTo(div);
+                        div.appendTo(container);
+                    }
+                },
                 
                 createVolumeList: function(manga, volumes) {
                     var divNano = $(document.createElement('div')).addClass('nano'),
@@ -78,8 +109,6 @@
                 }
             };
             
-            
-            
             $(document).ready(function(){
                 $.post('php/manga-list.php', {}, 
                     function(data) {
@@ -88,33 +117,7 @@
                         }
                         // create the bookshelf dom
                         if (bookShelf.mangas && bookShelf.mangas.length>0) {
-                            var container = $('#Container');
-                            for (var i=0; i<bookShelf.mangas.length; i++) {
-                                var manga = bookShelf.mangas[i],
-                                    folder = manga.folder,
-                                    title = manga.title,
-                                    div = $(document.createElement('div')),
-                                    flipDiv = $(document.createElement('div')),
-                                    flipper = $(document.createElement('div')),
-                                    flipFront = $(document.createElement('div')),
-                                    flipBack = $(document.createElement('div'));
-                                div
-                                    .addClass("mix category-1")
-                                    .attr("data-myorder", title);
-                                flipDiv.addClass("flip-container");
-                                flipper.addClass("flipper");
-                                flipFront
-                                    .addClass("front")
-                                    .html("<img src=\"mangas/"+folder+"/info/cover.jpg\">")
-                                    .appendTo(flipper);
-                                flipBack
-                                    .addClass("back")
-                                    .append(bookShelf.createVolumeList(folder, manga.folders))
-                                    .appendTo(flipper);
-                                flipper.appendTo(flipDiv);
-                                flipDiv.appendTo(div);
-                                div.appendTo(container);
-                            }
+                            bookShelf.createFlip();
                             $(".nano").nanoScroller({ 
                                 preventPageScrolling: true,
                                 alwaysVisible: true
