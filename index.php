@@ -1,23 +1,7 @@
 <?php
     require_once './config/config.inc.php';
-    $location = "reader.php";
-    $folder = filter_input(INPUT_GET, "manga");
-    if (!isset($folder)) {
-        $folder = getFirstManga(__DIR__);
-    }
-    $location.="?manga=".$folder;
-    $volume = filter_input(INPUT_GET, "vol");
-    if (!isset($volume)) {
-        $volume = 1;
-    }
-    $location.="&vol=".$volume;
-    $page = filter_input(INPUT_GET, "page");
-    if (isset($page)) {
-        $location.="#page/".$page;
-    }
     $flipCss = filectime("assets".DS."css".DS."3dflip.css");
     $mixCss = filectime("assets".DS."css".DS."mix.css");
-    
     $categories = $phrases["tags"];
     asort($categories);
     $catKeys = array_keys($categories);
@@ -34,6 +18,7 @@
         <script type="text/javascript" src="assets/js/sweet-alert/sweet-alert.js"></script>
         <script type="text/javascript" src="assets/js/jquery.nanoscroller.min.js"></script>
         <script type="text/javascript" src="assets/js/chosen.jquery.min.js"></script>
+        <script type="text/javascript" src="assets/js/Tocca.min.js"></script>
         <link href="assets/css/sweet-alert/sweet-alert.css" rel="stylesheet" >
         <link href="assets/css/nanoscroller.css" rel="stylesheet" >
         <link href="assets/css/mix.css?<?=$mixCss?>" rel="stylesheet" />
@@ -136,6 +121,15 @@
                             $("#Container").mixItUp();
                             $(".back").on( "mouseenter", function(){
                                 $(".nano").nanoScroller();
+                            });
+                            $(".flip-container").on("tap", function(e, data){
+                                $(".flip-container").removeClass("hover");
+                                $(this).addClass("hover");
+                                e.preventDefault();
+                            });
+                            $(document).on("tap", function(e, data){
+                                $(".flip-container").removeClass("hover");
+                                e.preventDefault();
                             });
                         }
                     }
