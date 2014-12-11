@@ -19,6 +19,7 @@
         <script type="text/javascript" src="assets/js/jquery.nanoscroller.min.js"></script>
         <script type="text/javascript" src="assets/js/chosen.jquery.min.js"></script>
         <script type="text/javascript" src="assets/js/Tocca.min.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.vide.min.js"></script>
         <link href="assets/css/sweet-alert/sweet-alert.css" rel="stylesheet" >
         <link href="assets/css/nanoscroller.css" rel="stylesheet" >
         <link href="assets/css/mix.css?<?=$mixCss?>" rel="stylesheet" />
@@ -106,6 +107,7 @@
                     .on('change', function(event, params){
                         $("#Container").mixItUp("filter", params.selected);
                     });
+                $(document.body).vide("assets/video/flipping-pages");
                 $.post('php/manga-list.php', {}, 
                     function(data) {
                         if (data.total && data.total>0) {
