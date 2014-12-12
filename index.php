@@ -17,29 +17,59 @@
         <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js?v=2.1.2"></script>
         <script type="text/javascript" src="assets/js/sweet-alert/sweet-alert.js"></script>
         <script type="text/javascript" src="assets/js/jquery.nanoscroller.min.js"></script>
-        <script type="text/javascript" src="assets/js/chosen.jquery.min.js"></script>
         <script type="text/javascript" src="assets/js/Tocca.min.js"></script>
         <script type="text/javascript" src="assets/js/jquery.vide.min.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.mmenu.min.all.js"></script>
         <link href="assets/css/normalize.css" rel="stylesheet" >
+        <link href="assets/css/jquery.mmenu.all.css" rel="stylesheet" >
         <link href="assets/css/sweet-alert/sweet-alert.css" rel="stylesheet" >
         <link href="assets/css/nanoscroller.css" rel="stylesheet" >
         <link href="assets/css/mix.css?<?=$mixCss?>" rel="stylesheet" />
         <link href="assets/css/3dflip.css?<?=$flipCss?>" rel="stylesheet" />
         <link href="assets/css/chosen.min.css" rel="stylesheet" >
+        <style type="text/css">
+            .mm-menu li.img:after
+            {
+                margin-left: 80px !important;
+            }
+            .mm-menu li.img a
+            {
+                font-size: 16px;
+            }
+            .mm-menu li.img a img
+            {
+                float: left;
+                margin: -5px 10px -5px 0;
+            }
+            .mm-menu li.img a small
+            {
+                font-size: 12px;
+            }
+        </style>
     </head>
     <body>
         <div class="controls">
-            <label for="filter"><?=$phrases["index.php"]["filters"]?>:</label>
-            <select id="filter" name="filter" style="width:25%">
-                <option value="all" selected="selected">Tutto</option>
-                <?php foreach ($categories as $key=>$value){?><option value=".<?=$key?>"><?=$value?></option> <?php }?>
-
-            </select>
-            <label><?=$phrases["index.php"]["sort"]?>:</label>
-            <button class="sort" data-sort="myorder:asc">Asc</button>
-            <button class="sort" data-sort="myorder:desc">Desc</button>
+            <a href="#menu"><i class="fa fa-bars fa-2x"></i></a>
         </div>
         <div id="Container" class="container"></div>
+        <nav id="menu">
+            <ul>
+                <li>
+                    <a href="#"><?=$phrases["index.php"]["filters"]?></a>
+                    <ul>
+                        <li><a href="#all">Tutto</a></li>
+                        <?php foreach ($categories as $key=>$value){?><li><a href="#<?=$key?>"><?=$value?></a></li> <?php }?>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><?=$phrases["index.php"]["sort"]?></a>
+                    <ul>
+                        <li><button class="sort" data-sort="myorder:asc">Asc</button></li>
+                        <li><button class="sort" data-sort="myorder:desc">Desc</button></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
         <script type="text/javascript">
             var bookShelf = {
                 mangas: undefined,
@@ -104,11 +134,24 @@
             };
             
             $(document).ready(function(){
-                $('#filter')
-                    .chosen()
-                    .on('change', function(event, params){
-                        $("#Container").mixItUp("filter", params.selected);
-                    });
+                $("#menu").mmenu({
+                   "offCanvas": {
+                      "zposition": "front"
+                   },
+                   "counters": true
+                })
+                .find('a')
+                .on("click", function(e) {
+                    if (this.className!=='mm-subopen') {
+                        var selected = this.hash.substr(1);
+                        if (selected!=='all') {
+                            selected = "."+selected;
+                        }
+                        $("#Container").mixItUp("filter", selected);
+                        $("#menu").trigger("close.mm");
+                    }
+                    e.preventDefault();
+                });
                 $(document.body)
                     .css("height", $( window ).height()+"px")
                     .vide({
