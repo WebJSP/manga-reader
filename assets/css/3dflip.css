@@ -1,9 +1,9 @@
 .flip-container {
     /* Rappresenta l'inclinazione prospettica, in questo caso della rotazione */
-    -webkit-perspective: 800;
-    -moz-perspective: 800;
-    -ms-perspective: 800;
-    perspective: 800;
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    -ms-perspective: 800px;
+    perspective: 800px;
     margin:0 auto;
 }
 
