@@ -43,6 +43,7 @@
         <script type="text/javascript">
             var bookShelf = {
                 mangas: undefined,
+                videInstance: undefined,
                 
                 createFlip: function() {
                     var container = $('#Container');
@@ -110,7 +111,19 @@
                     });
                 $(document.body)
                     .css("height", $( window ).height()+"px")
-                    .vide("assets/video/flipping-pages");
+                    .vide({
+                        mp4: "assets/video/flipping-pages.mp4",
+                        webm: "assets/video/flipping-pages.webm",
+                        ogv: "assets/video/flipping-pages.ogv",
+                        poster: "assets/video/flipping-pages.jpeg"
+                    });
+                bookShelf.videInstance = $(document.body).data("vide");
+                $(window)
+                    .on("resize", function(){
+                        $(document.body)
+                            .css("height", $( window ).height()+"px");
+                        bookShelf.videInstance.resize();
+                    });
                 $.post('php/manga-list.php', {}, 
                     function(data) {
                         if (data.total && data.total>0) {

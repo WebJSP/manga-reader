@@ -254,11 +254,11 @@
             sources = "";
 
             if (typeof vide.path === "object") {
-                if (vide.path.mp4) {
-                    sources += "<source src='" + vide.path.mp4 + ".mp4' type='video/mp4'>";
-                }
                 if (vide.path.webm) {
                     sources += "<source src='" + vide.path.webm + ".webm' type='video/webm'>";
+                }
+                if (vide.path.mp4) {
+                    sources += "<source src='" + vide.path.mp4 + ".mp4' type='video/mp4'>";
                 }
                 if (vide.path.ogv) {
                     sources += "<source src='" + vide.path.ogv + ".ogv' type='video/ogv'>";
@@ -267,8 +267,8 @@
                 vide.$video = $("<video>" + sources + "</video>");
             } else {
                 vide.$video = $("<video>" +
-                    "<source src='" + vide.path + ".mp4' type='video/mp4'>" +
                     "<source src='" + vide.path + ".webm' type='video/webm'>" +
+                    "<source src='" + vide.path + ".mp4' type='video/mp4'>" +
                     "<source src='" + vide.path + ".ogv' type='video/ogg'>" +
                     "</video>");
             }
