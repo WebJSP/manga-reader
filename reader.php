@@ -83,9 +83,10 @@
             <i class="zoom-icon fa fa-search-plus fa-2x"></i><br>
             <i class="fullscreen-icon fa fa-arrows-alt fa-2x"></i>
         </p>
-        <!--a id="manga-menu" href="#my-manga-menu"></a-->
         <nav id="my-manga-menu">
-            <ul></ul>
+            <ul>
+                <li><a href="/"><i class="fa fa-book"></i><?=$phrases["reader.php"]["bookshelf"]?></a></li>
+            </ul>
         </nav>
         <!--div class="zoom-icon zoom-icon-in"></div-->
         <!--div class="fullscreen-icon"></div-->

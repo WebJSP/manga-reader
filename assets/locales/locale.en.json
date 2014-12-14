@@ -46,7 +46,8 @@
         "help-title": "Manga Reader Help",
         "help-content": "On a computer:<br/>press arrow keys or click on page corners to turn pages,<br/>click on the page to activate zoom<br>On a mobile:<br/>tap on page corners to turn pages and double-tab to activate zoom.",
         "title": "Manga Reader",
-        "esc-tip": "Press ESC to exit"
+        "esc-tip": "Press ESC to exit",
+        "bookshelf": " return to Book-Shelf"
     },
     "dashboard/dashboard.php": {
         "manga-title-label": "Title",
