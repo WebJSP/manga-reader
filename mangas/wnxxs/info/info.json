@@ -1,5 +1,15 @@
 {
     "title": "Watashi ni XX Shinasai!",
     "tags": "cat-romance cat-school-life",
-    "cover": "cover.jpg"
+    "cover": "cover.jpg",
+    "page": {
+        "normal": {
+            "width": 600,
+            "height": 800
+        },
+        "zoomed": {
+            "width": 688,
+            "height": 1057
+        }
+    }
 }
