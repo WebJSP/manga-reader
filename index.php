@@ -45,11 +45,28 @@
             {
                 font-size: 12px;
             }
+            
+            a.mmenu {
+                color: #fff;
+                cursor: pointer;
+            }
+
+            a.mmenu:hover {
+                color: #ccc;
+            }
+
+            a.mmenu:link {
+                color: #fff;
+            }
+
+            a.mmenu:link:hover {
+                color: #ccc;
+            }
         </style>
     </head>
     <body>
         <div class="controls">
-            <a href="#menu"><i class="fa fa-bars fa-2x"></i></a>
+            <a class="mmenu" href="#menu"><i class="fa fa-bars fa-2x"></i></a>
         </div>
         <div id="Container" class="container"></div>
         <nav id="menu">
