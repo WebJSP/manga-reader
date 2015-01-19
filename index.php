@@ -18,7 +18,6 @@
         <script type="text/javascript" src="assets/js/sweet-alert/sweet-alert.js"></script>
         <script type="text/javascript" src="assets/js/jquery.nanoscroller.min.js"></script>
         <script type="text/javascript" src="assets/js/Tocca.min.js"></script>
-        <script type="text/javascript" src="assets/js/jquery.vide.min.js"></script>
         <script type="text/javascript" src="assets/js/jquery.mmenu.min.all.js"></script>
         <link href="assets/css/normalize.css" rel="stylesheet" >
         <link href="assets/css/jquery.mmenu.all.css" rel="stylesheet" >
@@ -62,6 +61,14 @@
             a.mmenu:link:hover {
                 color: #ccc;
             }
+            
+            html {
+                background-image: url(assets/pics/background.jpg);
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
         </style>
     </head>
     <body>
@@ -90,7 +97,6 @@
         <script type="text/javascript">
             var bookShelf = {
                 mangas: undefined,
-                videInstance: undefined,
                 
                 createFlip: function() {
                     var container = $('#Container');
@@ -170,19 +176,11 @@
                     e.preventDefault();
                 });
                 $(document.body)
-                    .css("height", $( window ).height()+"px")
-                    .vide({
-                        mp4: "assets/video/flipping-pages.mp4",
-                        webm: "assets/video/flipping-pages.webm",
-                        ogv: "assets/video/flipping-pages.ogv",
-                        poster: "assets/video/flipping-pages.jpeg"
-                    });
-                bookShelf.videInstance = $(document.body).data("vide");
+                    .css("height", $( window ).height()+"px");
                 $(window)
                     .on("resize", function(){
                         $(document.body)
                             .css("height", $( window ).height()+"px");
-                        bookShelf.videInstance.resize();
                     });
                 $.post('php/manga-list.php', {}, 
                     function(data) {
