@@ -14,7 +14,7 @@ All standards compliant browsers and platforms such as Desktops, Tablets, Smartp
 * Read Jpeg, Png or Svg files (all images must have the same width and height).
 * Built on Modernzr and jQuery 1.11.1
 * Works with manga stored in a web site folder
-* Volume description support markdown syntax
+* Volume (<a href="https://en.wikipedia.org/wiki/Tank%C5%8Dbon">Tankōbon</a>) description support markdown syntax
 
 ## To Dos
 * support external manga folders (full url)
