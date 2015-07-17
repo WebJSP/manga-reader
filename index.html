@@ -57,10 +57,29 @@
       z-index: 900;
     }
     </style>
+    <script id="blogs-tpl" type="text/x-handlebars-template">
+        {{#each blog}}
+        <div class="mdl-card mdl-cell mdl-cell--12-col">
+            <div class="mdl-card__media mdl-color-text--grey-50" style="background-image: url('{{backgroundUrl}}');">
+                <h3><a href="#">{{title}}</a></h3>
+            </div>
+            <div class="mdl-color-text--grey-600 mdl-card__supporting-text">{{{content}}}</div>
+            <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
+                <div class="minilogo"></div>
+                <div>
+                    <strong>Massimo (Ojii-san)</strong>
+                    <span>2 days ago</span>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </script>    
     <!-- jQuery -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <!-- Parse.js -->
     <script src="http://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
+    <!-- Handlebars.js -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.min.js"></script>
   </head>
   <body>
     <div class="demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
@@ -167,7 +186,6 @@
       </main>
       <div class="mdl-layout__obfuscator"></div>
     </div>
-    <a href="https://github.com/google/material-design-lite/blob/master/templates/blog/" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">View Source</a>
     <script src="js/material.min.js"></script>
     <script src="js/blog.js"></script>
   </body>
